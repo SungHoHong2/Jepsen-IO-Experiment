@@ -12,9 +12,9 @@ then
 
 elif [ "$1" = "clojure" ]
 then
-
     if [ "$1" = "create project" ]
     then
+        cd /
         lein new tutorial
         echo "project created"
     fi
