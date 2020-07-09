@@ -1,4 +1,4 @@
-# Jepsen-IO-Experiment
+# Jepsen-IO Experiment
 
 - assuming that we are following the docker-compose tutorial 
 
