@@ -18,14 +18,13 @@ then
         rm -rf tutorial
         lein new tutorial
         echo "project created"
-
     else
+
         if [ -z "$2" ]
         then
             echo "no program to run"
             exit
         fi
-
         cp clojure/$2/project.clj /tutorial/project.clj
         cp clojure/$2/core.clj /tutorial/src/tutorial/core.clj
         cd /tutorial
