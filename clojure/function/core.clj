@@ -37,7 +37,8 @@
   (println(demo "Hello" "This" "is" "the" "message"))
 
 
-
+  ; Higher Order Functions
+  (println(filter even? (range 0 10)))
 
 
 
