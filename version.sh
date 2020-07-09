@@ -41,6 +41,9 @@ then
         echo "project $1 created"
     else
         cp scaffolding/project.clj /jepsen.etcdemo
+        cp scaffolding/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+        cd /jepsen.etcdemo
+        lein run hi there
 
 
     fi
