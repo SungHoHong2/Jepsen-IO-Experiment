@@ -13,10 +13,11 @@
   (println y)
   (println str1)
 
-  ; anonymous function
+  ; Anonymous function
 
   ((fn [x] (println(* 2 x))) 2)
 
+  ; Clojure functions
 
   (defn demo1 [] (println(* 2 2)))
   (defn demo2 [x] (println(* 2 x)))
@@ -25,6 +26,16 @@
   (demo1)
   (demo2 1)
   (demo3 2 3)
+
+  ; Variadic Functions
+  (defn demo
+    [message & others]
+    (str message (clojure.string/join " " others))
+  )
+  (demo "Hello" "This" "is" "the" "message")
+
+
+
 
 
 
