@@ -8,7 +8,7 @@
   (println (+ 1 2))
   (println (str "Hello World"))
   (println (+ 1 2 3))
-  (println [+ 1 2 3]))
+  (println [+ 1 2 3])
 
   ;; The below code declares a integer variable
   (def x 1)
@@ -20,7 +20,6 @@
   (println y)
   (println str1)
 
-
-(-main)
+)
 
 
