@@ -21,11 +21,11 @@
 
   (defn demo1 [] (* 2 2))
   (defn demo2 [x] (* 2 x))
-  (defn demo3 [x y] (println(* 2 x y)))
+  (defn demo3 [x y] (* 2 x y))
 
   (println(demo1))
   (println(demo2 1))
-  (demo3 2 3)
+  (println(demo3 2 3))
 
   ; Variadic Functions
   (defn demo
