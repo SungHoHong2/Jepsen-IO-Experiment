@@ -6,10 +6,9 @@
   (println "Hello, Sungho!")
   (println (+ 1 2))
   (println (str "Hello World"))
+  (println (+ 1 2 3))
+  (println [+ 1 2 3]))
 
-
-
-
-  )
+(-main)
 
 
