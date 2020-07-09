@@ -21,8 +21,8 @@ then
 
     elif [ "$2" = "hello_world" ]
     then
-        cp clojure/hello_world/core.clj /tutorial/core.clj
-        cp clojure/hello_world/project.clj /tutorial/src/tutorial/core.clj
+        cp clojure/hello_world/project.clj /tutorial/project.clj
+        cp clojure/hello_world/core.clj /tutorial/src/tutorial/core.clj
         cd /tutorial
         lein run
     fi
