@@ -1,4 +1,6 @@
-(ns tutorial.core)
+(ns tutorial.core
+  (:gen-class)) ; namespace
+
 
 (defn -main [& args]
   (println "Hello, Sungho!")
