@@ -11,11 +11,12 @@
     - [Scaffolding](scaffolding)
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
 
-
-
-
 ### Prerequisite
 - Followed the [dockerized Jepson](https://github.com/jepsen-io/jepsen/tree/master/docker) provided in Jepson repo
+
+
+
+
 
 ```
 # install docker compose

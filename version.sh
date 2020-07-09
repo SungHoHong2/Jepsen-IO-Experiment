@@ -31,9 +31,21 @@ then
         lein run
     fi
 
-elif [ "$1" = "Test scaffolding" ]
+elif [ "$1" = "scaffolding" ]
 then
-    echo "$1"
+    if [ "$2" = "create_project" ]
+    then
+        cd /
+        rm -rf jepsen.etcdemo
+        lein new jepsen.etcdemo
+        echo "project $1 created"
+    else
+        cp scaffolding/project.clj /jepsen.etcdemo
+
+
+    fi
+
+
 
 
 
