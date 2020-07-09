@@ -19,17 +19,15 @@ then
         lein new tutorial
         echo "project created"
 
-    elif [ "$2" = "hello_world" ]
-    then
-        cp clojure/hello_world/project.clj /tutorial/project.clj
-        cp clojure/hello_world/core.clj /tutorial/src/tutorial/core.clj
-        cd /tutorial
-        lein run
+    else
+        if [ -z "$2" ]
+        then
+            echo "no program to run"
+            exit
+        fi
 
-    elif [ "$2" = "statement" ]
-    then
-        cp clojure/statement/project.clj /tutorial/project.clj
-        cp clojure/statement/core.clj /tutorial/src/tutorial/core.clj
+        cp clojure/$2/project.clj /tutorial/project.clj
+        cp clojure/$2/core.clj /tutorial/src/tutorial/core.clj
         cd /tutorial
         lein run
     fi
