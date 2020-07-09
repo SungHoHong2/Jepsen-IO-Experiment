@@ -8,6 +8,11 @@
   (def emp (struct Employee "John" 1))
   (println emp)
 
-  )
+  (def emp2 (struct-map Employee :EmployeeName "John" :Employeeid 1))
+  (println emp2)
+
+
+
+)
 
 
