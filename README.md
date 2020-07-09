@@ -2,10 +2,10 @@
 
 ### Contents 
 
-- [] **Clojure Tutorials**
+- **Clojure Tutorials**
     - Understanding the programming language syntax of Clojure
     - [Reference link](https://www.tutorialspoint.com/clojure/clojure_overview.htm) 
-- []  **Jepsen Tutorials**
+- **Jepsen Tutorials**
     - Understanding the basic usage of Jepson
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
 
