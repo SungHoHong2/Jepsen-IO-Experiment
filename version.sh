@@ -43,9 +43,7 @@ then
         cp scaffolding/project.clj /jepsen.etcdemo
         cp scaffolding/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
         cd /jepsen.etcdemo
-        lein run hi there
-
-
+        lein run test
     fi
 
 
