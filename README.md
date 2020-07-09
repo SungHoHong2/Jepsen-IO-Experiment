@@ -1,6 +1,18 @@
 # Jepsen-IO Experiment
 
-- assuming that we are following the docker-compose tutorial 
+### Contents 
+
+- [] **Clojure Tutorials**
+    - Understanding the programming language syntax of Clojure
+    - [Reference link](https://www.tutorialspoint.com/clojure/clojure_overview.htm) 
+- []  **Jepsen Tutorials**
+    - Understanding the basic usage of Jepson
+    - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
+
+
+
+### Prerequisite
+The implementation is based on the [dockerized Jepson](https://github.com/jepsen-io/jepsen/tree/master/docker) provided in Jepson repo
 
 ```
 # install docker compose
