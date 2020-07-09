@@ -20,12 +20,11 @@
   ; Clojure functions
 
   (defn demo1 [] (* 2 2))
-  (defn demo2 [x] (println(* 2 x)))
+  (defn demo2 [x] (* 2 x))
   (defn demo3 [x y] (println(* 2 x y)))
 
   (println(demo1))
-
-  (demo2 1)
+  (println((demo2 1))
   (demo3 2 3)
 
   ; Variadic Functions
