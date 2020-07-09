@@ -11,6 +11,9 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 # install Jepsen
 git clone https://github.com/jepsen-io/jepsen.git
 
+# move to docker tutorial
+cd jepsen/docker
+
 # removed in up.sh
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
