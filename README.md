@@ -13,7 +13,7 @@
 
 
 ### Prerequisite
-- The implementation is based on the [dockerized Jepson](https://github.com/jepsen-io/jepsen/tree/master/docker) provided in Jepson repo
+- Followed the [dockerized Jepson](https://github.com/jepsen-io/jepsen/tree/master/docker) provided in Jepson repo
 
 ```
 # install docker compose
