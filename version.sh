@@ -12,11 +12,19 @@ then
 
 elif [ "$1" = "clojure" ]
 then
-    if [ "$1" = "create project" ]
+    if [ "$2" = "create_project" ]
     then
         cd /
+        rm -rf tutorial
         lein new tutorial
         echo "project created"
+
+    elif [ "$2" = "hello_world" ]
+    then
+        cp clojure/hello_world/core.clj /tutorial/core.clj
+        cp clojure/hello_world/project.clj /tutorial/src/tutorial/core.clj
+        cd /tutorial
+        lein run
     fi
 
 else
