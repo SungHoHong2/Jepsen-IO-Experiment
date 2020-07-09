@@ -32,9 +32,9 @@
     )
   )
 
-;  if ( = 2 2)
-;    (println "Values are equal")
-;    (println "Values are not equal")
+  if ( = 2 2)
+    (println "Values are equal")
+    (println "Values are not equal")
 
 ;  if (= 2 2)
 ;  (do(println "Both the values are equal")
