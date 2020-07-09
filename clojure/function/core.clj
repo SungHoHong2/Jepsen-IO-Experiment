@@ -19,7 +19,7 @@
 
   ; Clojure functions
 
-  (defn demo1 [] (println(* 2 2)))
+  (defn demo1 [] (* 2 2))
   (defn demo2 [x] (println(* 2 x)))
   (defn demo3 [x y] (println(* 2 x y)))
 
