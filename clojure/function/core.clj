@@ -31,9 +31,8 @@
   (defn demo
     [message & others]
     (
-      str message (clojure.string/join " " others)
-      (println message)
-     )
+      str message (println(clojure.string/join) " " others))
+    )
   )
   (demo "Hello" "This" "is" "the" "message")
 
