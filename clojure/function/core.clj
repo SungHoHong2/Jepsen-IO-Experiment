@@ -19,10 +19,12 @@
 
 
   (defn demo1 [] (println(* 2 2)))
-  (defn demo2 [x] (* 2 x))
-  (defn demo3 [x y] (* 2 x y))
+  (defn demo2 [x] (println(* 2 x)))
+  (defn demo3 [x y] (println(* 2 x y)))
 
   (demo1)
+  (demo2 1)
+  (demo3 2 3)
 
 
 
