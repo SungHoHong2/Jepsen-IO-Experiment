@@ -14,6 +14,11 @@
   (println (:Employeeid emp))
   (println (:EmployeeName emp))
 
+  (def newemp (assoc emp :EmployeeName "Mark"))
+  (println newemp)
+
+
+
 )
 
 
