@@ -25,7 +25,6 @@
 
   (println(demo1))
   (demo2 1)
-  (println(demo2))
   (demo3 2 3)
 
   ; Variadic Functions
