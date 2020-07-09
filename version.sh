@@ -32,7 +32,6 @@ then
         cp clojure/statement/core.clj /tutorial/src/tutorial/core.clj
         cd /tutorial
         lein run
-
     fi
 
 else

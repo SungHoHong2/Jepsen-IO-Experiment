@@ -15,6 +15,14 @@
          )
   )
 
+  ; for-each statement
+  (doseq [n [0 1 2]]
+    (println n)
+  )
+
+
+
+
 
 )
 
