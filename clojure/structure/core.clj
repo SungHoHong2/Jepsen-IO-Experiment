@@ -17,7 +17,8 @@
   (def newemp (assoc emp :EmployeeName "Mark"))
   (println newemp)
 
-
+  (def newemp2 (assoc emp :EmployeeRank "A"))
+  (println newemp2)
 
 )
 
