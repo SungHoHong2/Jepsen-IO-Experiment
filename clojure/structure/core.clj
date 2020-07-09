@@ -6,8 +6,6 @@
 
   (println (defstruct Employee :EmployeeName :Employeeid))
 
-
-
 )
 
 
