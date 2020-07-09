@@ -17,7 +17,12 @@
 
   ((fn [x] (println(* 2 x))) 2)
 
-  ;
+
+  (defn demo1 [] (* 2 2))
+  (defn demo2 [x] (* 2 x))
+  (defn demo3 [x y] (* 2 x y))
+
+  (println demo1)
 
 
 
