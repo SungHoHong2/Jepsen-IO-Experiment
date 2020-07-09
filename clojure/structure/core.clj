@@ -4,8 +4,10 @@
 
 (defn -main [& args]
 
-  (println (defstruct Employee :EmployeeName :Employeeid))
+  (defstruct Employee :EmployeeName :Employeeid)
+  (def emp (struct Employee "John" 1))
+  (println emp)
 
-)
+  )
 
 
