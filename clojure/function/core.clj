@@ -30,7 +30,10 @@
   ; Variadic Functions
   (defn demo
     [message & others]
-    (str message (clojure.string/join " " others))
+    (
+      str message (clojure.string/join " " others)
+      (println message)
+     )
   )
   (demo "Hello" "This" "is" "the" "message")
 
