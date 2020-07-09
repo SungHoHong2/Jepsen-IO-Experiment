@@ -34,7 +34,7 @@
       str message (clojure.string/join " " others)
     )
   )
-  (demo "Hello" "This" "is" "the" "message")
+  (println(demo "Hello" "This" "is" "the" "message"))
 
 
 
