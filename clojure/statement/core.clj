@@ -37,10 +37,12 @@
     (println "Values are not equal")
   )
 
-;  if (= 2 2)
-;  (do(println "Both the values are equal")
-;      (println "true")
-;  )
+  (if (= 2 2)
+    (do(println "Both the values are equal")
+        (println "true")
+    )
+  )
+
 ;  (do(println "Both the values are not equal")
 ;      (println "false")
 ;  )
