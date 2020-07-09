@@ -38,7 +38,8 @@
   )
 
   (if (= 2 2)
-    (do(println "Both the values are equal")
+    (do
+        (println "Both the values are equal")
         (println "true")
     )
   )
