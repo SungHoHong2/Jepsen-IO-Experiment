@@ -25,6 +25,14 @@ then
         cp clojure/hello_world/core.clj /tutorial/src/tutorial/core.clj
         cd /tutorial
         lein run
+
+    elif [ "$2" = "statement" ]
+    then
+        cp clojure/statement/project.clj /tutorial/project.clj
+        cp clojure/statement/core.clj /tutorial/src/tutorial/core.clj
+        cd /tutorial
+        lein run
+
     fi
 
 else

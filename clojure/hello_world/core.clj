@@ -20,6 +20,14 @@
   (println y)
   (println str1)
 
+  ;; The below code declares a Boolean variable with the name of status
+  (def status true)
+
+  ;; The below code declares a Boolean variable with the name of STATUS
+  (def STATUS false)
+
+  ;; The below code declares a variable with an underscore character.
+  (def _num1 2)
 )
 
 
