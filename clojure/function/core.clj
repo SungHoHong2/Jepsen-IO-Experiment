@@ -15,9 +15,7 @@
 
   ; anonymous function
 
-  (
-    (fn [x] ( printf(* 2 x) )) 2
-  )
+  ((fn [x] (println(* 2 x))) 2)
 
   ;
 
