@@ -4,7 +4,6 @@
 
 - **Clojure Tutorials**
     - Understanding the programming language syntax of Clojure
-    - [Experiments](clojure)
     - [Reference link](https://www.tutorialspoint.com/clojure/clojure_overview.htm) 
 - **Jepsen Tutorials**
     - Understanding the basic usage of Jepson
