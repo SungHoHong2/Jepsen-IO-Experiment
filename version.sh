@@ -31,6 +31,14 @@ then
         lein run
     fi
 
+elif [ "$1" = "Test scaffolding" ]
+then
+    echo "$1"
+
+
+
+
+
 else
   echo "no argument"
 
