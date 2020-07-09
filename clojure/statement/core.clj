@@ -20,9 +20,9 @@
     (println n)
   )
 
-
-
-
+  (dotimes [n 5]
+    (println n)
+  )
 
 )
 
