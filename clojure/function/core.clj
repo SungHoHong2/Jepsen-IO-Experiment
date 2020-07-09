@@ -23,7 +23,7 @@
   (defn demo2 [x] (println(* 2 x)))
   (defn demo3 [x y] (println(* 2 x y)))
 
-  (println demo1)
+  (println(demo1))
 
   (demo2 1)
   (demo3 2 3)
