@@ -31,29 +31,31 @@ then
         lein run
     fi
 
-elif [ "$1" = "scaffolding" ]
+elif [ "$1" = "jepsen" ]
 then
-    if [ "$2" = "create_project" ]
+
+    if [ -z "$2" ]
+    then
+        echo "no program to run"
+        exit
+    fi
+
+    if [ "$2" = "scaffolding" ]
     then
         cd /
         rm -rf jepsen.etcdemo
         lein new jepsen.etcdemo
-        echo "project $1 created"
-    else
         cp scaffolding/project.clj /jepsen.etcdemo
         cp scaffolding/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
         cd /jepsen.etcdemo
         lein run test
+
+    else # database, client
+        cp $2/project.clj /jepsen.etcdemo
+        cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+        cd /jepsen.etcdemo
+        lein run test
     fi
-
-elif [ "$1" = "database_automation" ]
-then
-    cp database_automation/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-    cd /jepsen.etcdemo
-    lein run test
-
-
-
 
 
 else
