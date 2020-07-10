@@ -13,6 +13,31 @@
 (def logfile (str dir "/etcd.log"))
 (def pidfile (str dir "/etcd.pid"))
 
+(defn node-url
+  "An HTTP url for connecting to a node on a particular port."
+  [node port]
+  (str "http://" (name node) ":" port))
+
+(defn peer-url
+  "The HTTP url for other peers to talk to a node."
+  [node]
+  (node-url node 2380))
+
+(defn client-url
+  "The HTTP url clients use to talk to a node."
+  [node]
+  (node-url node 2379))
+
+(defn initial-cluster
+  "Constructs an initial cluster string for a test, like
+  \"foo=foo:2380,bar=bar:2380,...\""
+  [test]
+  (->> (:nodes test)
+       (map (fn [node]
+              (str node "=" (peer-url node))))
+       (str/join ",")))
+
+
 (defn db
   "Etcd DB for a particular version."
   [version]
@@ -23,7 +48,7 @@
                   (let [url (str "https://storage.googleapis.com/etcd/" version
                                  "/etcd-" version "-linux-amd64.tar.gz")]
                     (cu/install-archive! url dir))
-;
+
 ;                  (cu/start-daemon!
 ;                   {:logfile logfile
 ;                    :pidfile pidfile
@@ -71,30 +96,6 @@
                     (info node "tearing down etcd"))))
 
 
-
-(defn node-url
-  "An HTTP url for connecting to a node on a particular port."
-  [node port]
-  (str "http://" (name node) ":" port))
-
-(defn peer-url
-  "The HTTP url for other peers to talk to a node."
-  [node]
-  (node-url node 2380))
-
-(defn client-url
-  "The HTTP url clients use to talk to a node."
-  [node]
-  (node-url node 2379))
-
-(defn initial-cluster
-  "Constructs an initial cluster string for a test, like
-  \"foo=foo:2380,bar=bar:2380,...\""
-  [test]
-  (->> (:nodes test)
-       (map (fn [node]
-              (str node "=" (peer-url node))))
-       (str/join ",")))
 
 (defn etcd-test
   "Given an options map from the command line runner (e.g. :nodes, :ssh,
