@@ -58,10 +58,10 @@ then
     # checking for time-limit
     if [ -z "$3" ]
     then
-        lein run test --time-limit 10
+        lein run test --test-count 10
         echo "completed $2 test case with time-limit 10"
     else
-        lein run test --time-limit $3
+        lein run test --time-limit $3 --test-count 10
         echo "completed $2 test case with time-limit $3"
     fi
 
