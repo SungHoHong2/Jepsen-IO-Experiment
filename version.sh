@@ -55,7 +55,6 @@ then
 
     cd /jepsen.etcdemo
 
-
     # checking for time-limit
     if [ -z "$3" ]
     then
@@ -66,12 +65,12 @@ then
         echo "completed $2 test case with time-limit $3"
     fi
 
+    # checking for invalid results
     if test -f "/jepsen.etcdemo/store/latest/linear.svg"; then
         echo "invalid result detected copying the result to repo ... "
         cp /jepsen.etcdemo/store/latest/linear.svg debug/linear.svg
         cp /jepsen.etcdemo/store/latest/linear.svg debug/history.txt
     fi
-
 
 
 
