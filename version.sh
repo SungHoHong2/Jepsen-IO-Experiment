@@ -54,8 +54,18 @@ then
     fi
 
     cd /jepsen.etcdemo
-    lein run test
-    echo "completed $2 test case"
+
+
+    # checking for time-limit
+    if [ -z "$3" ]
+    then
+        lein run test --time-limit 10
+        echo "completed $2 test case with time-limit 10"
+    else
+        lein run test --time-limit $3
+        echo "completed $2 test case with time-limit $3"
+    fi
+
     # open store/latest/latency-raw.png
 
 
