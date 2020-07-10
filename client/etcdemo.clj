@@ -15,19 +15,6 @@
 (def logfile (str dir "/etcd.log"))
 (def pidfile (str dir "/etcd.pid"))
 
-(defrecord Client [conn]
-  client/Client
-  (open! [this test node]
-    this)
-
-  (setup! [this test])
-
-  (invoke! [_ test op])
-
-  (teardown! [this test])
-
-  (close! [_ test]))
-
 (defn node-url
   "An HTTP url for connecting to a node on a particular port."
   [node port]
@@ -87,6 +74,22 @@
          (log-files [_ test node]
                     [logfile])
          ))
+
+
+(defrecord Client [conn]
+  client/Client
+  (open! [this test node]
+    (assoc this :conn (v/connect (client-url node)
+                                 {:timeout 5000})))
+
+  (setup! [this test])
+
+  (invoke! [_ test op])
+
+  (teardown! [this test])
+
+  (close! [_ test]))
+
 
 
 (defn etcd-test
