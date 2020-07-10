@@ -62,9 +62,6 @@
                    :--initial-cluster-state        :new
                    :--initial-advertise-peer-urls  (peer-url node)
                    :--initial-cluster              (initial-cluster test))
-
-
-
                   ))
 
 ;         (setup! [_ test node]
