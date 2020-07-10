@@ -93,7 +93,7 @@
   client/Client
   (open! [this test node]
     (assoc this :conn (v/connect (client-url node)
-                                 {:timeout 10000})))
+                                 {:timeout 50000})))
 
   (setup! [this test])
 
