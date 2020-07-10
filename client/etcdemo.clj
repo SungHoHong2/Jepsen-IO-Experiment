@@ -6,6 +6,7 @@
                [client :as client]
                [control :as c]
                [db :as db]
+               [generator :as gen]
                [tests :as tests]]
               [jepsen.control.util :as cu]
               [jepsen.os.debian :as debian]))
@@ -18,15 +19,21 @@
 (defrecord Client [conn]
   client/Client
   (open! [this test node]
-    this)
+    (assoc this :conn (v/connect (client-url node)
+                                 {:timeout 5000})))
 
   (setup! [this test])
 
-  (invoke! [_ test op])
+  (invoke! [this test op]
+    (case (:f op)
+          :read (assoc op :type :ok, :value (v/get conn "foo"))))
 
   (teardown! [this test])
 
-  (close! [_ test]))
+  (close! [_ test]
+    ; If our connection were stateful, we'd close it here. Verschlimmmbesserung
+    ; doesn't actually hold connections, so there's nothing to close.
+    ))
 
 (defn node-url
   "An HTTP url for connecting to a node on a particular port."
@@ -97,7 +104,12 @@
          opts
          {:name "etcd"
           :os   debian/os
-          :db   (db "v3.1.5")}))
+          :db   (db "v3.1.5")
+          :client (Client. nil)
+          :generator (->> r
+                          (gen/stagger 1)
+                          (gen/nemesis nil)
+                          (gen/time-limit 15))}))
 
 (defn -main
   "Handles command line arguments. Can either run a test, or a web server for

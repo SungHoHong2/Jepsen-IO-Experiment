@@ -12,7 +12,7 @@ then
 
 elif [ "$1" = "clojure" ]
 then
-    if [ "$2" = "create_project" ]
+    if [ "$2" = "init" ]
     then
         cd /
         rm -rf tutorial
@@ -31,6 +31,7 @@ then
         lein run
     fi
 
+# ./version jepsen (option)
 elif [ "$1" = "jepsen" ]
 then
 
@@ -40,7 +41,7 @@ then
         exit
     fi
 
-    if [ "$2" = "scaffolding" ]
+    if [ "$2" = "init" ] # scaffolding
     then
         cd /
         rm -rf jepsen.etcdemo
