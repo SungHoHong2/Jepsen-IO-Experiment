@@ -51,7 +51,6 @@ then
     cp database_automation/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
     cd /jepsen.etcdemo
     lein run test
-    echo "pass"
 
 
 
