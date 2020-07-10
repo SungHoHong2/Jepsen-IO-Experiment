@@ -46,7 +46,13 @@ then
         lein run test
     fi
 
+elif [ "$1" = "database automation" ]
+then
 
+
+
+
+    echo "pass"
 
 
 
