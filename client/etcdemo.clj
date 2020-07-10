@@ -18,8 +18,7 @@
 (defrecord Client [conn]
   client/Client
   (open! [this test node]
-    (assoc this :conn (v/connect (client-url node)
-                                 {:timeout 5000})))
+    this)
 
   (setup! [this test])
 
