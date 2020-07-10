@@ -47,15 +47,13 @@ then
         lein new jepsen.etcdemo
         cp scaffolding/project.clj /jepsen.etcdemo
         cp scaffolding/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-        cd /jepsen.etcdemo
-        lein run test
 
     else # database, client
         cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-        cd /jepsen.etcdemo
-        lein run test
     fi
 
+    cd /jepsen.etcdemo
+    lein run test
 
 else
   echo "no argument"
