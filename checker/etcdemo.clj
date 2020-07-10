@@ -12,6 +12,7 @@
               [jepsen.os.debian :as debian]
               [knossos.model :as model]
               [slingshot.slingshot :refer [try+]]
+              [jepsen.checker.timeline :as timeline]
               [verschlimmbesserung.core :as v]))
 
 (def dir "/opt/etcd")
@@ -127,7 +128,8 @@
           :checker (checker/compose
                     {:perf   (checker/perf)
                      :linear (checker/linearizable {:model     (model/cas-register)
-                                                    :algorithm :linear})})
+                                                    :algorithm :linear})
+                     :timeline (timeline/html)})
           :generator  (->> (gen/mix [r w cas])
                            (gen/stagger 1)
                            (gen/nemesis nil)

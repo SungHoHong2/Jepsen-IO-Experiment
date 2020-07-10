@@ -56,6 +56,8 @@ then
     cd /jepsen.etcdemo
     lein run test
     echo "completed $2 test case"
+    # open store/latest/latency-raw.png
+
 
 else
   echo "no argument"
