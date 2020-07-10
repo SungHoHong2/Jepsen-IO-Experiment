@@ -9,6 +9,7 @@
                [generator :as gen]
                [tests :as tests]]
               [jepsen.control.util :as cu]
+              [slingshot.slingshot :refer [try+]]
               [jepsen.os.debian :as debian]))
 
 (def dir "/opt/etcd")
@@ -85,7 +86,6 @@
                     [logfile])
          ))
 
-
 (defrecord Client [conn]
   client/Client
   (open! [this test node]
@@ -94,11 +94,18 @@
 
   (setup! [this test])
 
-  (invoke! [_ test op]
+  (invoke! [this test op]
     (case (:f op)
-          :read  (assoc op :type :ok, :value (parse-long (v/get conn "foo")))
+          :read (assoc op :type :ok, :value (parse-long (v/get conn "foo")))
           :write (do (v/reset! conn "foo" (:value op))
-                   (assoc op :type :ok))))
+                   (assoc op :type :ok))
+          :cas (try+
+                (let [[old new] (:value op)]
+                  (assoc op :type (if (v/cas! conn "foo" old new)
+                                    :ok
+                                    :fail)))
+                (catch [:errorCode 100] ex
+                  (assoc op :type :fail, :error :not-found)))))
 
   (teardown! [this test])
 
@@ -115,7 +122,7 @@
           :os         debian/os
           :db         (db "v3.1.5")
           :client     (Client. nil)
-          :generator  (->> r
+          :generator  (->> (gen/mix [r w cas])
                            (gen/stagger 1)
                            (gen/nemesis nil)
                            (gen/time-limit 15))}))
