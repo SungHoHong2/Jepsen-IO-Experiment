@@ -94,21 +94,20 @@
   (close! [_ test]))
 
 
-
 (defn etcd-test
   "Given an options map from the command line runner (e.g. :nodes, :ssh,
   :concurrency ...), constructs a test map."
   [opts]
   (merge tests/noop-test
          opts
-         {:name "etcd"
-          :os   debian/os
-          :db   (db "v3.1.5")
-          :client (Client. nil)
-          :generator (->> r
-                          (gen/stagger 1)
-                          (gen/nemesis nil)
-                          (gen/time-limit 15))}))
+         {:name       "etcd"
+          :os         debian/os
+          :db         (db "v3.1.5")
+          :client     (Client. nil)
+          :generator  (->> (gen/mix [r])
+                           (gen/stagger 1)
+                           (gen/nemesis nil)
+                           (gen/time-limit 15))}))
 
 (defn -main
   "Handles command line arguments. Can either run a test, or a web server for
