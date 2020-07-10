@@ -46,12 +46,11 @@ then
         lein run test
     fi
 
-elif [ "$1" = "database automation" ]
+elif [ "$1" = "database_automation" ]
 then
-
-
-
-
+    cp database_automation/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+    cd /jepsen.etcdemo
+    lein run test
     echo "pass"
 
 
