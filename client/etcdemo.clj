@@ -20,6 +20,11 @@
 (defn w   [_ _] {:type :invoke, :f :write, :value (rand-int 5)})
 (defn cas [_ _] {:type :invoke, :f :cas, :value [(rand-int 5) (rand-int 5)]})
 
+(defn parse-long
+  "Parses a string to a Long. Passes through `nil`."
+  [s]
+  (when s (Long/parseLong s)))
+
 (defn node-url
   "An HTTP url for connecting to a node on a particular port."
   [node port]
@@ -89,9 +94,11 @@
 
   (setup! [this test])
 
-  (invoke! [this test op]
+  (invoke! [_ test op]
     (case (:f op)
-          :read (assoc op :type :ok, :value (v/get conn "foo"))))
+          :read  (assoc op :type :ok, :value (parse-long (v/get conn "foo")))
+          :write (do (v/reset! conn "foo" (:value op))
+                   (assoc op :type :ok))))
 
   (teardown! [this test])
 
