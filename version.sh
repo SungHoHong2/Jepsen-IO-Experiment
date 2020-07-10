@@ -66,7 +66,8 @@ then
         echo "completed $2 test case with time-limit $3"
     fi
 
-    # open store/latest/latency-raw.png
+    cp /jepsen.etcdemo/store/latest/linear.svg debug/linear.svg
+    cp /jepsen.etcdemo/store/latest/linear.svg debug/history.txt
 
 
 else
