@@ -51,7 +51,7 @@ then
         cp scaffolding/project.clj /jepsen.etcdemo/project.clj
     fi
 
-    # scaffolding database, client, checker(+ time-limit)
+    # scaffolding, database, client, checker(+ time-limit)
     cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
     cd /jepsen.etcdemo
 
