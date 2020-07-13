@@ -46,9 +46,9 @@ then
         cd /
         rm -rf jepsen.etcdemo
         lein new jepsen.etcdemo
-        cp scaffolding/project.clj /jepsen.etcdemo
-        cp scaffolding/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-        exit
+
+        cd /Jepsen-IO-Experiment/
+        cp scaffolding/project.clj /jepsen.etcdemo/project.clj
     fi
 
     # scaffolding database, client, checker(+ time-limit)
