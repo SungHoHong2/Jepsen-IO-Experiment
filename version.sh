@@ -41,27 +41,26 @@ then
         exit
     fi
 
-    if [ "$2" = "init" ] # scaffolding
+    if [ "$2" = "scaffolding" ]
     then
         cd /
         rm -rf jepsen.etcdemo
         lein new jepsen.etcdemo
         cp scaffolding/project.clj /jepsen.etcdemo
-        cp scaffolding/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-
-    else # database, client
-        cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+        exit
     fi
 
+    # scaffolding database, client, checker(+ time-limit)
+    cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
     cd /jepsen.etcdemo
 
     # checking for time-limit
     if [ -z "$3" ]
     then
-        lein run test --test-count 10
-        echo "completed $2 test case with time-limit 10"
+        lein run test
+        echo "completed $2 test case"
     else
-        lein run test --time-limit $3 --test-count 10
+        lein run test --time-limit $3
         echo "completed $2 test case with time-limit $3"
     fi
 
@@ -71,8 +70,6 @@ then
         cp /jepsen.etcdemo/store/latest/linear.svg debug/linear.svg
         cp /jepsen.etcdemo/store/latest/linear.svg debug/history.txt
     fi
-
-
 
 else
   echo "no argument"
