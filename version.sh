@@ -68,6 +68,7 @@ then
     # checking for invalid results
     if test -f "/jepsen.etcdemo/store/latest/linear.svg"; then
         echo "invalid result detected copying the result to repo ... "
+        cd /Jepsen-IO-Experiment/
         cp /jepsen.etcdemo/store/latest/linear.svg debug/linear.svg
         cp /jepsen.etcdemo/store/latest/linear.svg debug/history.txt
     fi
