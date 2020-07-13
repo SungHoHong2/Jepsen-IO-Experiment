@@ -71,6 +71,9 @@ then
         cd /Jepsen-IO-Experiment/
         cp /jepsen.etcdemo/store/latest/linear.svg debug/linear.svg
         cp /jepsen.etcdemo/store/latest/linear.svg debug/history.txt
+        git add .
+        git commit -m "updated debugged SVG"
+        git push origin master
     fi
 
 else
