@@ -31,7 +31,7 @@ then
         lein run
     fi
 
-# ./version jepsen (option)
+# ./version jepsen ( scaffolding, database, client, checker(+ time-limit) )
 elif [ "$1" = "jepsen" ]
 then
 
@@ -51,7 +51,6 @@ then
         cp scaffolding/project.clj /jepsen.etcdemo/project.clj
     fi
 
-    # scaffolding, database, client, checker(+ time-limit)
     cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
     cd /jepsen.etcdemo
 
