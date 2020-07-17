@@ -3,6 +3,8 @@ git pull origin master
 HOSTS="$(cat /etc/hostname)"
 LOCATION="$(pwd)"
 VERSION=3
+TIMESTAMP=`date "+%Y%m%d-%H%M%S"`
+
 
 if [ "$1" = "commit" ]
 then
@@ -68,8 +70,8 @@ then
     if test -f "/jepsen.etcdemo/store/latest/linear.svg"; then
         echo "invalid result detected copying the result to repo ... "
         cd /Jepsen-IO-Experiment/
-        cp /jepsen.etcdemo/store/latest/linear.svg debug/linear.svg
-        cp /jepsen.etcdemo/store/latest/linear.svg debug/history.txt
+        cp /jepsen.etcdemo/store/latest/linear.svg debug/linear-$TIMESTAMP.svg
+        cp /jepsen.etcdemo/store/latest/history.txt debug/history-$TIMESTAMP.txt
         git add .
         git commit -m "updated debugged SVG"
         git push origin master

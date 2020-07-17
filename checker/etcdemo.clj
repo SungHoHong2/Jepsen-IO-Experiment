@@ -126,12 +126,22 @@
           :os         debian/os
           :db         (db "v3.1.5")
           :client     (Client. nil)
+
+          ; nemesis deliberately create failures during the test
+          ; the example kills the half of the network and restore it later
+
           :nemesis    (nemesis/partition-random-halves)
+
+          ; checker validates whether a sequence of operation are consistent
+          ; This model is a Knossos checker which tests locks and registers
+
           :checker (checker/compose
                     {:perf   (checker/perf)
                      :linear (checker/linearizable {:model     (model/cas-register)
                                                     :algorithm :linear})
                      :timeline (timeline/html)})
+
+          ; generater allows the duration of the test and the mix of workloads
           :generator (->> (gen/mix [r w cas])
                           (gen/stagger 1/10)
                           (gen/nemesis

@@ -17,6 +17,8 @@
 (def logfile (str dir "/etcd.log"))
 (def pidfile (str dir "/etcd.pid"))
 
+; a collection of functions that is used by the workers
+; type invoke means that the workers are going to try an operation and return ok or fail
 (defn r   [_ _] {:type :invoke, :f :read, :value nil})
 (defn w   [_ _] {:type :invoke, :f :write, :value (rand-int 5)})
 (defn cas [_ _] {:type :invoke, :f :cas, :value [(rand-int 5) (rand-int 5)]})
@@ -86,14 +88,16 @@
                     [logfile])
          ))
 
+; the client function make use of verschlimmbesserung(v) to communicate with etcd
 (defrecord Client [conn]
   client/Client
+  ; open allows the clients to bind with a node
   (open! [this test node]
     (assoc this :conn (v/connect (client-url node)
                                  {:timeout 5000})))
-
+  ; setup initializes any data structure that the test needs such as creating tables
   (setup! [this test])
-
+  ; applies operations to the system and returns the result
   (invoke! [this test op]
     (case (:f op)
           :read (assoc op :type :ok, :value (parse-long (v/get conn "foo")))
@@ -107,8 +111,10 @@
                 (catch [:errorCode 100] ex
                   (assoc op :type :fail, :error :not-found)))))
 
+  ; removes the table
   (teardown! [this test])
 
+  ; close allows the clients to close the connection
   (close! [_ test]))
 
 
