@@ -37,7 +37,7 @@
               (str node "=" (peer-url node))))
        (str/join ",")))
 
-
+; database function
 (defn db
   "Etcd DB for a particular version."
   [version]
@@ -83,6 +83,7 @@
          opts
          {:name "etcd"
           :os   debian/os
+          ; database function assigned as etcd
           :db   (db "v3.1.5")}))
 
 (defn -main

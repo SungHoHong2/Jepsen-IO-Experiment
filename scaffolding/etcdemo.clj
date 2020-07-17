@@ -2,7 +2,6 @@
     (:require [jepsen.cli :as cli]
               [jepsen.tests :as tests]))
 
-
 ; the function that runs the etcd test
 (defn etcd-test
   "Given an options map from the command line runner (e.g. :nodes, :ssh,
