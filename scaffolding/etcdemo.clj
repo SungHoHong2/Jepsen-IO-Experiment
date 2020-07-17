@@ -1,4 +1,6 @@
+; namespace and the included external APIs
 (ns jepsen.etcdemo
+    ; jepsen.cli runs the tests, handle errors and running the tests
     (:require [jepsen.cli :as cli]
               [jepsen.tests :as tests]))
 
