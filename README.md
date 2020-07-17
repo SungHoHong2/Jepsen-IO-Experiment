@@ -12,6 +12,8 @@
     - [client](client)
     - [checker](checker)
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
+- **Elle**
+    - [Reference link](https://github.com/jepsen-io/elle)
 
 ### Prerequisite
 - Followed the [dockerized Jepson](https://github.com/jepsen-io/jepsen/tree/master/docker) provided in Jepson repo
