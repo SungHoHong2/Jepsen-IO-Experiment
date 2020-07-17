@@ -1,7 +1,8 @@
 ; namespace and the included external APIs
 (ns jepsen.etcdemo
-    ; jepsen.cli runs the tests, handle errors and running the tests
+    ; jepsen.cli creates the workers
     (:require [jepsen.cli :as cli]
+    ; jepsen.tests contains a noop-test that runs by the workers
               [jepsen.tests :as tests]))
 
 ; the function that runs the etcd test
@@ -10,6 +11,7 @@
   :concurrency, ...), constructs a test map."
   [opts]
   ; function is extended with the noop-test
+  ; noop-test does nothing
   (merge tests/noop-test
          opts))
 
