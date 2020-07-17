@@ -43,7 +43,7 @@
   "Etcd DB for a particular version."
   [version]
   (reify db/DB
-         ; follows the installation procedures of etcd
+         ; starts the workers and install etcd
          (setup! [_ test node]
                  (info node "installing etcd" version)
                  ; uses the sudo command
@@ -69,7 +69,7 @@
                    :--initial-cluster              (initial-cluster test))
                   ))
 
-         ; stops the function and removes the etcd
+         ; stops the workers and removes the etcd
          (teardown! [_ test node]
                     (info node "tearing down etcd")
                     (cu/stop-daemon! binary pidfile)
