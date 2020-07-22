@@ -8,6 +8,7 @@
               [dom-top.core :refer [real-pmap]]
               [jepsen.hello :as hi]
               [jepsen.elle.core :refer :all]
+              [jepsen.elle.graph :as g]
               )
     )
 

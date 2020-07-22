@@ -25,6 +25,7 @@
     checker runs that function, identifies strongly-connected components in the
     resulting graph, and decides whether the history is valid based on whether
     the graph has any strongly connected components--e.g. cycles."
+
     (:require
               [jepsen.elle.graph :as g]
               [jepsen.elle.util :as util]
