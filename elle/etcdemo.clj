@@ -6,10 +6,9 @@
                [edn :as edn]]
               [clojure.java.io :as io]
               [dom-top.core :refer [real-pmap]]
-              [elle [core :refer :all]
-               [graph :as g]]
-
-              ))
+              )
+    (load "elle/core.clj")
+    )
 
 
 
