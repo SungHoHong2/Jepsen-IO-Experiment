@@ -7,7 +7,7 @@
               [clojure.java.io :as io]
               [dom-top.core :refer [real-pmap]]
               )
-    (load "elle/test.clj")
+    (:load "elle/test.clj")
     )
 
 
