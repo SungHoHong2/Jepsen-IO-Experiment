@@ -15,7 +15,7 @@
     (println "Elle Experiment BEGIN")
 
 
-    (println "Elle Experiment BEGIN")
+    (println "Elle Experiment END")
 
   )
 )
