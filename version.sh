@@ -69,7 +69,7 @@ then
     lein run test
     echo "completed $2 test case"
 
-    # checking for invalid results
+    # migrate the invalid results
     if test -f "/jepsen.etcdemo/store/latest/linear.svg"; then
         echo "invalid result detected copying the result to repo ... "
         cd /Jepsen-IO-Experiment/
