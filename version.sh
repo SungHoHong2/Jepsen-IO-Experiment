@@ -56,6 +56,12 @@ then
     cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
     cd /jepsen.etcdemo
 
+    if [ "$2" = "elle" ]
+    then
+        cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+        cd /jepsen.etcdemo
+    fi
+
     # checking for time-limit
     if [ -z "$3" ]
     then
