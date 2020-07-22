@@ -58,8 +58,8 @@ then
 
     if [ "$2" = "elle" ]
     then
-        cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-        cd /jepsen.etcdemo
+        cd /Jepsen-IO-Experiment/
+        cp elle/project.clj /jepsen.etcdemo/project.clj
     fi
 
     # checking for time-limit
