@@ -6,6 +6,7 @@
               [jepsen.tests :as tests]))
 
 
+
 ; main function
 (defn -main
   "Handles command line arguments. Can either run a test, or a web server for
@@ -13,9 +14,6 @@
   [& args]
   (
     (println "Elle Experiment BEGIN")
-
-
     (println "Elle Experiment END")
-
   )
 )
