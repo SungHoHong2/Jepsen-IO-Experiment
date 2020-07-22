@@ -53,14 +53,14 @@ then
         cp scaffolding/project.clj /jepsen.etcdemo/project.clj
     fi
 
-    cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-    cd /jepsen.etcdemo
-
     if [ "$2" = "elle" ]
     then
         cd /Jepsen-IO-Experiment/
         cp elle/project.clj /jepsen.etcdemo/project.clj
     fi
+
+    cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+    cd /jepsen.etcdemo
 
     # checking for time-limit
     if [ -z "$3" ]
