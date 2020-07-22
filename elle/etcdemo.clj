@@ -6,7 +6,7 @@
                [edn :as edn]]
               [clojure.java.io :as io]
               [dom-top.core :refer [real-pmap]]
-              [jepsen.hello :as tt]
+              [jepsen.hello :as hi]
               )
     )
 
@@ -15,8 +15,7 @@
 (defn -main [& args]
     (println "Elle Experiment BEGIN")
 
-
-
+    (hi.greet "Sungho")
 
     (println "Elle Experiment END")
 )
