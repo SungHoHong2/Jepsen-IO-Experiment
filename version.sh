@@ -43,6 +43,7 @@ then
         exit
     fi
 
+    # copy the dependencies
     if [ "$2" = "scaffolding" ]
     then
         cd /
@@ -59,10 +60,11 @@ then
         cp elle/project.clj /jepsen.etcdemo/project.clj
     fi
 
+    # copy the main function
     cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
-    cd /jepsen.etcdemo
 
-    # checking for time-limit
+    # invoke the main function
+    cd /jepsen.etcdemo
     if [ -z "$3" ]
     then
         lein run test

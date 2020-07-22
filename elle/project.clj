@@ -9,4 +9,15 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [jepsen "0.1.13"]
                  ; a library for talking to etcd
-                 [verschlimmbesserung "0.1.3"]])
+                 [slingshot "0.12.2"]
+                 [dom-top "1.0.5"]
+                 [knossos "0.3.7"
+                  :exclusions [org.slf4j/slf4j-log4j12]]
+                 [org.clojure/tools.logging "0.6.0"]
+                 [rhizome "0.2.9"]
+                 [jepsen.txn "0.1.2"]
+                 [io.lacuna/bifurcan "0.1.0"]]
+
+
+
+                 )
