@@ -8,7 +8,7 @@
     (:require [clojure.tools.logging :refer [info error warn]]
               [clojure.core.reducers :as r]
               [clojure.set :as set]
-              [elle.util :refer [map-vals maybe-interrupt]])
+              [jepsen.elle.util :refer [map-vals maybe-interrupt]])
     (:import (io.lacuna.bifurcan DirectedGraph
                                  Graphs
                                  Graphs$Edge
