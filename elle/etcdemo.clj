@@ -15,7 +15,7 @@
 (defn -main [& args]
     (println "Elle Experiment BEGIN")
 
-    (hi.greet "Sungho")
+    (greet "Sungho")
 
     (println "Elle Experiment END")
 )
