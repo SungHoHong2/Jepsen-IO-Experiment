@@ -1,5 +1,8 @@
 (ns jepsen.hello
     (:gen-class))
 
-(defn greet [name] ( println( str "Hello, " name  ) ) )
+(defn greet [name] (
+       println( str "Hello, " name  )
+      )
+)
 
