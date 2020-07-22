@@ -58,7 +58,7 @@ then
     then
         cd /Jepsen-IO-Experiment/
         cp elle/project.clj /jepsen.etcdemo/project.clj
-        cp elle/src/test.clj /jepsen.etcdemo/src/jepsen/elle/test.clj
+        cp elle/src/test.clj /jepsen.etcdemo/src/jepsen/test.clj
     fi
 
     # copy the main function
