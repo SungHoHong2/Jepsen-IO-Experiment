@@ -17,7 +17,9 @@
                  [rhizome "0.2.9"]
                  [jepsen.txn "0.1.2"]
                  [io.lacuna/bifurcan "0.1.0"]]
-
-
-
+  :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.1"]
+                                  [spootnik/unilog "0.7.24"]]}}
+  :jvm-opts ["-server"
+             "-XX:+PrintGC"]
+  :repl-options {:init-ns elle.core}
                  )
