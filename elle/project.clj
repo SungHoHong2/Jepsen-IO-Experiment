@@ -8,7 +8,6 @@
   ; specifies the 3rd party libraries
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [jepsen "0.1.13"]
-                 ; a library for talking to etcd
                  [slingshot "0.12.2"]
                  [dom-top "1.0.5"]
                  [knossos "0.3.7"
