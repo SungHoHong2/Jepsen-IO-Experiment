@@ -26,8 +26,8 @@
     resulting graph, and decides whether the history is valid based on whether
     the graph has any strongly connected components--e.g. cycles."
     (:require
-              [graph :as g]
-              [util :as util]
+              [jepsen.elle.graph :as g]
+              [jepsen.elle.util :as util]
               [clojure.tools.logging :refer [info error warn]]
               [clojure.core.reducers :as r]
               [clojure [pprint :refer [pprint]]
