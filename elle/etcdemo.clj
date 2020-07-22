@@ -9,8 +9,12 @@
               [jepsen.hello :as hi]
               [jepsen.elle.core :refer :all]
               [jepsen.elle.graph :as g]
-              )
-    )
+              [jepsen.txn :as txn]
+              [knossos [history :as history]
+               [op :as op]]
+              [slingshot.slingshot :refer [try+ throw+]])
+    (:import (java.io PushbackReader)))
+
 
 (defn -main [& args]
     (println "Elle Experiment BEGIN")
