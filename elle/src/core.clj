@@ -1,4 +1,4 @@
-(ns elle.core
+(ns jepsen.elle.core
     "Tests based on detecting cycles between operations in a history.
 
     First, we define a bunch of ways you can compute a dependency graph over a
