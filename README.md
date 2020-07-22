@@ -13,6 +13,7 @@
     - [checker](checker)
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
 - **Elle**
+    - [Explanation](elle)
     - [Reference link](https://github.com/jepsen-io/elle)
 
 ### Prerequisite
