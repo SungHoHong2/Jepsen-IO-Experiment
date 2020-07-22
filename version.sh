@@ -59,9 +59,9 @@ then
         cd /Jepsen-IO-Experiment/
         cp elle/project.clj /jepsen.etcdemo/project.clj
         cp elle/src/hello.clj /jepsen.etcdemo/src/jepsen/hello.clj
-        cp elle/src/core.clj /jepsen.etcdemo/src/jepsen/elle/core.clj
-        cp elle/src/graph.clj /jepsen.etcdemo/src/jepsen/elle/graph.clj
-        cp elle/src/util.clj /jepsen.etcdemo/src/jepsen/elle/util.clj
+        cp elle/src/core.clj /jepsen.etcdemo/src/jepsen/elle/
+        cp elle/src/graph.clj /jepsen.etcdemo/src/jepsen/elle/
+        cp elle/src/util.clj /jepsen.etcdemo/src/jepsen/elle/
 
 
     fi
