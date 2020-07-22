@@ -33,7 +33,7 @@ then
         lein run
     fi
 
-# ./version jepsen ( scaffolding, database, client, checker(+ time-limit) )
+# ./version jepsen ( scaffolding, database, client, checker(+ time-limit), elle)
 elif [ "$1" = "jepsen" ]
 then
 
@@ -59,9 +59,6 @@ then
         cd /Jepsen-IO-Experiment/
         cp elle/project.clj /jepsen.etcdemo/project.clj
         cp elle/src/core.clj /jepsen.etcdemo/elle/core.clj
-
-
-
     fi
 
     # copy the main function
@@ -69,14 +66,8 @@ then
 
     # invoke the main function
     cd /jepsen.etcdemo
-    if [ -z "$3" ]
-    then
-        lein run test
-        echo "completed $2 test case"
-    else
-        lein run test --time-limit $3
-        echo "completed $2 test case with time-limit $3"
-    fi
+    lein run test
+    echo "completed $2 test case"
 
     # checking for invalid results
     if test -f "/jepsen.etcdemo/store/latest/linear.svg"; then
