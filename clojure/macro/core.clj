@@ -2,11 +2,12 @@
   (:gen-class)) ; namespace
 
 
-(defmacro Simple [] (println "Hello"))
 
 (defn -main [& args]
 
+  (defmacro Simple [] (println "Hello"))
   (macroexpand '(Simple))
+  (Simple)
 
   (defmacro my-first-macro []
     (list reverse "Hello World"))
