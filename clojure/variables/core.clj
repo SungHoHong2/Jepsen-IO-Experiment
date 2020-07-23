@@ -40,6 +40,11 @@
   (def myatom (atom 1))
   (println @myatom)
 
+  (println "\nMeta")
+  (def my-map (with-meta [1 2 3] {:prop "values"}))
+  (println (meta my-map))
+  (println (my-map))
+
 
 
 
