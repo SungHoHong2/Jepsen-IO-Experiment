@@ -44,8 +44,6 @@
   (def my-map (with-meta [1 2 3] {:prop "values"}))
   (println (meta my-map))
 
-  (def m ^:hi [1 2 3])
-  (meta (with m merge {:bye true}))
 
 
 
