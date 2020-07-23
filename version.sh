@@ -78,21 +78,24 @@ then
     if [ "$2" = "outside_docker" ]
     then
         echo "outside the container"
-        echo "modify https://github.com/jepsen-io/jepsen"
-        echo "adding installation of git inside every node"
+        echo "git clone https://github.com/jepsen-io/jepsen"
+        echo "commit 556d30549c469d5a39a0186d7e5e2af4a014d8b5, branch master, Date: Mon Jun 29 12:07:08 2020 -0400"
+        echo "[Update]: Modified installation of git inside every node"
         cp elle/update/docker/Dockerfile /home/users/sungho/jepsen/docker/node/Dockerfile
 
-        # git clone -b 6.0.3 https://github.com/jepsen-io/redis.git
     elif [ "$2" = "inside_docker" ]
     then
-        echo "modify https://github.com/jepsen-io/redis.git"
-        echo "commit 6c857fb16f7977cff21756acc99eb302cfdd11bd (HEAD -> master)"
-        echo "modify to a valid link to the git repo"
+        echo "git clone https://github.com/jepsen-io/redis.git"
+        echo "commit 6c857fb16f7977cff21756acc99eb302cfdd11bd, branch: master, Date: Tue Jun 23 10:17:12 2020 -0400"
+        echo "[Update]: modify to a valid link to the git repo"
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
 
     elif [ "$2" = "run" ]
     then
         cd /redis
+        # updates the changes for all the nodes
+        lein install
+        # run the test
         lein run test-all
     fi
 
