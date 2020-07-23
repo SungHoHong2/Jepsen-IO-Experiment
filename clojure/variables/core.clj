@@ -25,6 +25,9 @@
 
   (println "\nSet")
   (println (set '(1 1 2 2)))
+  (println (sorted-set 3 2 1))
+  (println (get (set '(3 2 1)) 2))
+
 
 
 )
