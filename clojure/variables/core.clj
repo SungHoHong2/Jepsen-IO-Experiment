@@ -43,8 +43,10 @@
   (println "\nMeta")
   (def my-map (with-meta [1 2 3] {:prop "values"}))
   (println (meta my-map))
-  (println (my-map))
 
+  (def m ((list 'a 'b 'c 'd)))
+  (meta (with m merge {:bye true}))
+  print
 
 
 
