@@ -12,8 +12,7 @@
   (def string1 (slurp "example.txt"))
   (println string1)
 
-  (with-open [rdr (clojure.java.io/reader "Example.txt")]
-    (reduce conj [] (line-seq rdr)))
+
 
   (println (.exists (clojure.java.io/file "example.txt")))
 
