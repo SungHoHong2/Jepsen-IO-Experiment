@@ -1,5 +1,6 @@
 (ns tutorial.core
-  (:gen-class)) ; namespace
+    (:require [clojure.set :as set])
+    (:gen-class)) ; namespace
 
 
 (defn -main [& args]
