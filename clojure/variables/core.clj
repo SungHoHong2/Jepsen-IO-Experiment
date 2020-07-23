@@ -14,8 +14,12 @@
   (println (list 1 2 3 4))
 
   (println (list 'a 'b 'c 'd))
-  (println (list* 1 [2,3]))
-  (println (first (list 1 2,3)))
+
+  ; append 1 from the list
+  (print "Append: ") (println (list* 1 [2,3]))
+
+  ; return the first element of the list
+  (print "First element: ") (println (first (list 1 2,3)))
 
 
 
