@@ -54,17 +54,6 @@ then
         cp scaffolding/project.clj /jepsen.etcdemo/project.clj
     fi
 
-    if [ "$2" = "elle" ]
-    then
-        cd /Jepsen-IO-Experiment/
-        mkdir -p /jepsen.etcdemo/src/jepsen/elle/
-        cp elle/project.clj /jepsen.etcdemo/project.clj
-        cp elle/src/hello.clj /jepsen.etcdemo/src/jepsen/hello.clj
-        cp elle/src/core.clj /jepsen.etcdemo/src/jepsen/elle/
-        cp elle/src/graph.clj /jepsen.etcdemo/src/jepsen/elle/
-        cp elle/src/util.clj /jepsen.etcdemo/src/jepsen/elle/
-    fi
-
     # copy the main function
     cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
 
@@ -83,6 +72,17 @@ then
         git commit -m "updated debugged SVG"
         git push origin master
     fi
+
+elif [ "$1" = "elle" ]
+then
+    if [ "$2" = "jepsen" ]
+    then
+        echo "outside the container"
+        echo "using git-repo https://github.com/jepsen-io/redis.git"
+        # install the git inside every node
+        cp elle/jepsen/docker/Dockerfile /home/users/sungho/jepsen/docker/node/Dockerfile
+    fi
+
 
 
 
