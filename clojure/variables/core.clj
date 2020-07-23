@@ -4,7 +4,6 @@
 
 (defn -main [& args]
 
-  ; print out the number types
   (println "Numbers")
   (def x 5)
   (def y 5.25)
@@ -31,12 +30,15 @@
   (println "\nVector")
   (println (vector 1 2 3))
 
-
   (println "\nHashmap")
   (def hashMap (hash-map "z" "1" "b" "2" "a" "3"))
   (println hashMap)
   (def sortedMap (sorted-map "z" "1" "b" "2" "a" "3"))
   (println sortedMap)
+
+
+
+
 
 )
 
