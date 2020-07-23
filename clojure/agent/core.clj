@@ -19,6 +19,10 @@
   (println (await-for 200 counter))
   (println @counter)
 
+  (send-off counter + 100)
+  (await counter)
+  (println @counter)
+
 
 
   (shutdown-agents)
