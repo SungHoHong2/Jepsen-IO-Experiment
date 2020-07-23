@@ -29,7 +29,7 @@ then
 
         if [ "$2" = "file" ]
         then
-            cp clojure/file/example.txt /tutorial/src/tutorial/
+            cp clojure/file/example.txt /tutorial/
         fi
 
         cp clojure/$2/project.clj /tutorial/project.clj
