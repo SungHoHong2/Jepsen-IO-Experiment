@@ -8,8 +8,7 @@
   (println string1)
 
   (with-open [rdr (clojure.java.io/reader "example.txt")]
-    (reduce conj [] (line-seq rdr)))
-
+    (reduce conj [] ( def string2 (line-seq rdr))))
 
 
 
