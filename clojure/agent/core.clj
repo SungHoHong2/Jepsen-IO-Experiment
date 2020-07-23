@@ -12,10 +12,12 @@
   (println "Incrementing Counter")
   (println @counter)
 
+  (send-off counter + 100)
+  (println @counter)
+  (println @counter)
+
+
   (shutdown-agents)
-
-
-
 
 )
 
