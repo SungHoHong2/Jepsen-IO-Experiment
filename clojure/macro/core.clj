@@ -8,6 +8,8 @@
     (println "Hello"))
   (macroexpand '(Simple))
 
+  (println Simple)
+
 
 
 
