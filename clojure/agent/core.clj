@@ -6,7 +6,7 @@
 
   (def counter (agent 0))
   (println counter)
-
+  (println @counter))
 
 )
 
