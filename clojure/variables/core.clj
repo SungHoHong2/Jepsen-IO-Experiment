@@ -41,13 +41,12 @@
   (println @myatom)
 
   (println "\nMeta")
-  (def my-map (with-meta [1 2 3] {:prop "values"}))
+  (def testList [1 2 3])
+  (def my-map (with-meta testList {:prop "values"}))
   (println (meta my-map))
 
-  (def m ^:hi [1 2 3])
-  (meta (with-meta m {:bye true}))
 
-  (println (m))
+
 
 
 )
