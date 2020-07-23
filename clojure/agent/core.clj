@@ -12,6 +12,10 @@
   (println "Incrementing Counter")
   (println @counter)
 
+  (shutdown-agents)
+
+
+
 
 )
 
