@@ -75,13 +75,22 @@ then
 
 elif [ "$1" = "elle" ]
 then
-    if [ "$2" = "jepsen" ]
+    if [ "$2" = "outside_docker" ]
     then
         echo "outside the container"
-        echo "using git-repo https://github.com/jepsen-io/redis.git"
-        # install the git inside every node
-        cp elle/jepsen/docker/Dockerfile /home/users/sungho/jepsen/docker/node/Dockerfile
+        echo "modify https://github.com/jepsen-io/jepsen"
+        echo "adding installation of git inside every node"
+        cp elle/update/docker/Dockerfile /home/users/sungho/jepsen/docker/node/Dockerfile
+
+        # git clone -b 6.0.3 https://github.com/jepsen-io/redis.git
+    elif [ "$2" = "inside_docker" ]
+    then
+        echo "modify https://github.com/jepsen-io/redis.git"
+        echo "commit 6c857fb16f7977cff21756acc99eb302cfdd11bd (HEAD -> master)"
+        echo "modify to a valid link to the git repo"
+        cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
     fi
+
 
 
 
