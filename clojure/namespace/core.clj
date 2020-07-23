@@ -4,7 +4,7 @@
 
 (defn -main [& args]
 
-  (println ns)
+  (println *ns*)
 
 
 )
