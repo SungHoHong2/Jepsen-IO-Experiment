@@ -12,7 +12,6 @@
     (list reverse "Hello World"))
   (macroexpand '(my-first-macro))
 
-  (my-first-macro)
 
 )
 
