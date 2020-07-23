@@ -47,7 +47,6 @@
   (def m ^:hi [1 2 3])
   (meta (with m merge {:bye true}))
 
-  (println (meta m))
 
 
 )
