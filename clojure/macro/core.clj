@@ -6,12 +6,8 @@
 
   (defmacro Simple []
     (println "Hello"))
+
   (macroexpand '(Simple))
-
-  (println Simple)
-
-
-
 
 )
 
