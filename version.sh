@@ -91,10 +91,6 @@ then
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
     fi
 
-
-
-
-
 else
   echo "no argument"
 

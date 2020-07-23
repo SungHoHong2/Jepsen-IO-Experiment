@@ -27,7 +27,7 @@
 
 (def redis-repo
   "Where can we clone redis from?"
-  "https://github.com/jepsen-io/redis.git")
+  "https://github.com/redis/redis.git")
 
 (def dir
   "The remote directory where we deploy redis to"
