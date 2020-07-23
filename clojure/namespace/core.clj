@@ -5,7 +5,6 @@
 (defn -main [& args]
 
   (println *ns*)
-
   (all-ns)
 
 
