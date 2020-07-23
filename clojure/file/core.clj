@@ -4,7 +4,7 @@
 
 (defn -main [& args]
 
-  (def string1 (slurp "Example.txt"))
+  (def string1 (slurp "example.txt"))
   (println string1)
 
 
