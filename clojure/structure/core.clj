@@ -27,9 +27,6 @@
   (def my-map {"a" 1 "b" 2})
   (let [{a "a" b "b"} my-map] (println a b))
 
-
-
-
 )
 
 

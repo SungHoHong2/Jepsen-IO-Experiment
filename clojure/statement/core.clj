@@ -66,6 +66,19 @@
      :else (println "x is not defined")
   )
 
+  (def x (even? 0))
+  (println x)
+
+  (def x (neg? 2))
+  (println x)
+
+  (def x (odd? 3))
+  (println x)
+
+  (def x (pos? 3))
+  (println x)
+
+
 )
 
 

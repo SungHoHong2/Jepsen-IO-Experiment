@@ -36,6 +36,9 @@
   (def sortedMap (sorted-map "z" "1" "b" "2" "a" "3"))
   (println sortedMap)
 
+  (println "\nAtom")
+  (def myatom (atom 1))
+  (println @myatom)
 
 
 
