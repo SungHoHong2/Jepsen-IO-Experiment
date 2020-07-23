@@ -47,6 +47,9 @@
   (def m ^:hi [1 2 3])
   (meta (with-meta m {:bye true}))
 
+  (println (m))
+
+
 )
 
 
