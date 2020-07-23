@@ -4,10 +4,9 @@
 
 (defn -main [& args]
 
-  (defmacro Simple []
-    (println "Hello"))
+  (defmacro Simple [] (println "Hello"))
 
-  (macroexpand '(Simple))
+  (macroexpand 'Simple)
 
 )
 
