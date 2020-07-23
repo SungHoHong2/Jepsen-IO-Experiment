@@ -7,7 +7,7 @@
 
   (defmacro Simple [] (println "Hello"))
   (macroexpand '(Simple))
-  (Simple)
+  (Simple())
 
   (defmacro my-first-macro []
     (list reverse "Hello World"))
