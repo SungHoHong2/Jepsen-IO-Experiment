@@ -20,6 +20,9 @@
   (def newemp2 (assoc emp :EmployeeRank "A"))
   (println newemp2)
 
+  (def my-vector [1 2 3 4])
+  (let [[a b c d] my-vector] (println a b c d))
+
 )
 
 
