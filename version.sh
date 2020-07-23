@@ -89,6 +89,11 @@ then
         echo "commit 6c857fb16f7977cff21756acc99eb302cfdd11bd (HEAD -> master)"
         echo "modify to a valid link to the git repo"
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
+
+    elif [ "$2" = "run" ]
+    then
+        cd /redis
+        lein run test-all
     fi
 
 else
