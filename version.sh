@@ -27,6 +27,12 @@ then
             echo "no program to run"
             exit
         fi
+
+        if [ "$2" = "file" ]
+        then
+            cp clojure/file/example.txt tutorial/src/tutorial/
+        fi
+
         cp clojure/$2/project.clj /tutorial/project.clj
         cp clojure/$2/core.clj /tutorial/src/tutorial/core.clj
         cd /tutorial
