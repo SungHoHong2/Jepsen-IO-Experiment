@@ -6,7 +6,7 @@
 
   (defmacro Simple [] (println "Hello"))
 
-  (macroexpand 'Simple)
+  (macroexpand '(Simple))
 
 )
 
