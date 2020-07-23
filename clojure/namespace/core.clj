@@ -6,6 +6,11 @@
 
   (println *ns*)
 
+  (alias 'string 'clojure.examples.hello)
+  (all-ns)
+
+
+
 
 )
 
