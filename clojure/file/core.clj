@@ -14,7 +14,7 @@
   (def string1 (slurp "example.txt"))
   (println string1)
 
-
+  (println (.exists (clojure.java.io/file "Example.txt")))
 
 )
 
