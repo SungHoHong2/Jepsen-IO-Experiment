@@ -6,10 +6,10 @@
 
 
   (spit "example.txt"
-        "This is a string")
+        "First Sentence\n")
 
   (with-open [w (clojure.java.io/writer "example.txt" :append true)]
-    (.write w (str "hello" "world")))
+    (.write w (str "Second " "Sentence")))
 
   (def string1 (slurp "example.txt"))
   (println string1)
