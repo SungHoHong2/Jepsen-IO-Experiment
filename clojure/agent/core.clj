@@ -10,7 +10,7 @@
 
   (send counter + 100)
   (println "Incrementing Counter")
-  (println @counter)
+  (delay ((println @counter) 100))
 
 
 )
