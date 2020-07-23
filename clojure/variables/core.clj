@@ -22,12 +22,19 @@
   (print "First element: ") (println (first (list 1 2,3)))
   (print "Third element: ") (println (nth (list 1 2,3) 2))
 
-
   (println "\nSet")
   (println (set '(1 1 2 2)))
   (println (sorted-set 3 2 1))
-  (println (get (set '(3 2 1)) 2))
+  (print "Get: ") (println (get (set '(3 2 1)) 2))
   (print "Get: ") (println (get (set '(3 2 1)) 3))
+
+  (println "\nVector")
+  (println (vector 1 2 3))
+
+
+  (println "\nHashmap")
+  (def demokeys (hash-map "z" "1" "b" "2" "a" "3"))
+  (println demokeys)
 
 
 
