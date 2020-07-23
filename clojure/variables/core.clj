@@ -11,19 +11,20 @@
   (println (type y))
 
 
-  (println (list 1 2 3 4))
+  (println "List")
+  (print "Append: ") (println (list 1 2 3 4))
 
   (println (list 'a 'b 'c 'd))
-
-  ; append 1 from the list
   (print "Append: ") (println (list* 1 [2,3]))
-  (println (cons 0 (list 1 2,3)))
+  (print "Append: ") (println (cons 0 (list 1 2,3)))
+  (print "Append Multiple: ") (println (conj (list 1 2,3) 4 5))
 
-; return the first element of the list
   (print "First element: ") (println (first (list 1 2,3)))
-
   (print "Third element: ") (println (nth (list 1 2,3) 2))
 
+
+  (println "\nSet")
+  (println (set '(1 1 2 2)))
 
 
 )
