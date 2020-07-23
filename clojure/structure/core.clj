@@ -22,6 +22,7 @@
 
   (def my-vector [1 2 3 4])
   (let [[a b c d] my-vector] (println a b c d))
+  (let [[a b & the-rest] my-vector] (println a b the-rest))
 
 )
 
