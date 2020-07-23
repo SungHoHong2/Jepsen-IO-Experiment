@@ -12,6 +12,13 @@
     (list reverse "Hello World"))
   (macroexpand '(my-first-macro))
 
+  (defmacro infix
+    "Use this macro when you pine for the notation of your childhood"
+    [infixed]
+    (list (second infixed) (first infixed) (last infixed)))
+
+  (macroexpand '(infix (1 + 1)))
+
 
 )
 
