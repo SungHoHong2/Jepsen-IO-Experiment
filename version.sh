@@ -21,7 +21,6 @@ then
         lein new tutorial
         echo "project created"
     else
-
         if [ -z "$2" ]
         then
             echo "no program to run"
