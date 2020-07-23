@@ -46,8 +46,8 @@
 
   (def m ((list 'a 'b 'c 'd)))
   (meta (with m merge {:bye true}))
-  print
 
+  (println (meta m))
 
 
 )
