@@ -5,13 +5,13 @@
 (defn -main [& args]
 
   ; print out the number types
+  (println "Numbers")
   (def x 5)
   (def y 5.25)
   (println (type x))
   (println (type y))
 
-
-  (println "List")
+  (println "\nList")
   (print "Append: ") (println (list 1 2 3 4))
 
   (println (list 'a 'b 'c 'd))
