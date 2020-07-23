@@ -45,7 +45,13 @@
   (def my-map (with-meta testList {:prop "values"}))
   (println (meta my-map))
 
+  (println "\nLet")
+  (def my-vector [1 2 3 4])
+  (let [[a b c d] my-vector] (println a b c d))
+  (let [[a b & the-rest] my-vector] (println a b the-rest))
 
+  (def my-map {"a" 1 "b" 2})
+  (let [{a "a" b "b"} my-map] (println a b))
 
 
 
