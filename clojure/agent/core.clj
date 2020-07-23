@@ -8,6 +8,11 @@
   (println counter)
   (println @counter)
 
+  (send counter + 100)
+  (println "Incrementing Counter")
+  (println @counter)
+
+
 )
 
 
