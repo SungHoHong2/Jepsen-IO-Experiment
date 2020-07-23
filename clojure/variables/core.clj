@@ -17,10 +17,12 @@
 
   ; append 1 from the list
   (print "Append: ") (println (list* 1 [2,3]))
+  (println (cons 0 (list 1 2,3)))
 
-  ; return the first element of the list
+; return the first element of the list
   (print "First element: ") (println (first (list 1 2,3)))
 
+  (print "Third element: ") (println (nth (list 1 2,3) 2))
 
 
 
