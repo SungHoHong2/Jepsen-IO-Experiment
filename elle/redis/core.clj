@@ -183,7 +183,7 @@
 
 ;         (map redis-test)
      ))
-
+  (println "[all-tests]: END")
 )
 
 (defn -main
