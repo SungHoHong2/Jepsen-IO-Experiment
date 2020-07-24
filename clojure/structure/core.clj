@@ -4,26 +4,26 @@
 
 (defn -main [& args]
 
+  (println "Define struct with variables")
   (defstruct Employee :EmployeeName :Employeeid)
 
-  (println "Initialize with struct")
+  (println "\nInitialize an instance with the struct")
   (def emp (struct Employee "John" 1))
   (println emp)
 
-  (println "Initialize with struct-map")
+  (println "\nInitialize an instance with struct-map")
   (def emp2 (struct-map Employee :EmployeeName "Chris" :Employeeid 2))
   (println emp2)
 
-
-  (println "Print variables from the instance")
+  (println "\nPrint variables from the instance")
   (println (:Employeeid emp))
   (println (:EmployeeName emp))
 
-  (println "copy a new struct with name Mark")
+  (println "\ncopy a new instance with name Mark")
   (def newemp (assoc emp :EmployeeName "Mark"))
   (println newemp)
 
-  (println "copy a new struct with a rank A")
+  (println "\ncopy a new instance with a rank A")
   (def newemp2 (assoc emp :EmployeeRank "A"))
   (println newemp2)
 
