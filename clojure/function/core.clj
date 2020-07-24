@@ -35,12 +35,6 @@
 
   (println "\nHigher order functions")
   (println(filter even? (range 0 10)))
-
-
-
-
-
-
 )
 
 

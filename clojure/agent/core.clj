@@ -5,12 +5,13 @@
 
 (defn -main [& args]
 
+  (println "Create a counter with agent")
   (def counter (agent 0))
   (println counter)
   (println @counter)
 
   (send counter + 100)
-  (println "Incrementing Counter")
+  (println "\nIncrementing Counter")
   (println @counter)
 
   (send-off counter + 100)
