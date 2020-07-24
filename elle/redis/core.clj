@@ -180,8 +180,8 @@
     (->> (for [i counts, n nemeses, w workloads]
            (assoc opts :nemesis n :workload w))
 
-;         (doseq [[k v] opts] (println "\t" k v))
-         (map redis-test)
+;        (doseq [[k v] opts] (println "\t" k v))
+         (map redis-test(opts))
     )
   )
 )
