@@ -183,11 +183,10 @@
            (assoc opts :nemesis n :workload w)
          )
 
-         (doseq [[k v] opts] (println k v))
+         (doseq [[k v] opts] (println "\t" k v))
 
      ))
 
-  (println "after" opts)
 
   (println "passed the opts arguments to the redis test")
 
