@@ -1,18 +1,18 @@
 (ns jepsen.redis.core
-    "Top-level test runner, integration point for various workloads and nemeses."
-    (:require [clojure.tools.logging :refer [info warn]]
-              [clojure [pprint :refer [pprint]]
-               [string :as str]]
-              [jepsen [cli :as cli]
-               [checker :as checker]
-               [control :as c]
-               [generator :as gen]
-               [tests :as tests]
-               [util :as util :refer [parse-long]]]
-              [jepsen.os.debian :as debian]
-              [jepsen.redis [append :as append]
-               [db     :as rdb]
-               [nemesis :as nemesis]]))
+  "Top-level test runner, integration point for various workloads and nemeses."
+  (:require [clojure.tools.logging :refer [info warn]]
+            [clojure [pprint :refer [pprint]]
+                     [string :as str]]
+            [jepsen [cli :as cli]
+                    [checker :as checker]
+                    [control :as c]
+                    [generator :as gen]
+                    [tests :as tests]
+                    [util :as util :refer [parse-long]]]
+            [jepsen.os.debian :as debian]
+            [jepsen.redis [append :as append]
+                          [db     :as rdb]
+                          [nemesis :as nemesis]]))
 
 (def workloads
   "A map of workload names to functions that can take opts and construct
@@ -25,7 +25,7 @@
 
 (def nemeses
   "Types of faults a nemesis can create."
-  #{:pause :kill :partition :clock :member :island :mystery})
+   #{:pause :kill :partition :clock :member :island :mystery})
 
 (def standard-nemeses
   "Combinations of nemeses for tests"
@@ -59,40 +59,43 @@
   new Jepsen release for this."
   []
   (reify checker/Checker
-         (check [this test history opts]
-                (if-let [crashes (rdb/logged-crashes test)]
-                  {:valid?  false
-                   :crashes crashes}
-                  {:valid? true}))))
+    (check [this test history opts]
+      (if-let [crashes (rdb/logged-crashes test)]
+        {:valid?  false
+         :crashes crashes}
+        {:valid? true}))))
 
 (defn redis-test
   "Builds up a Redis test from CLI options."
   [opts]
+
+  (println "[redis-test]" opts)
+
   (let [workload ((workloads (:workload opts)) opts)
         db        (rdb/redis-raft)
         nemesis   (nemesis/package
-                   {:db      db
-                    :nodes   (:nodes opts)
-                    :faults  (set (:nemesis opts))
-                    :partition {:targets [:primaries
+                    {:db      db
+                     :nodes   (:nodes opts)
+                     :faults  (set (:nemesis opts))
+                     :partition {:targets [:primaries
                                            :majority
                                            :majorities-ring]}
-                    :pause     {:targets [:primaries :majority]}
-                    :kill      {:targets [:primaries :majority :all]}
-                    :interval  (:nemesis-interval opts)})
+                     :pause     {:targets [:primaries :majority]}
+                     :kill      {:targets [:primaries :majority :all]}
+                     :interval  (:nemesis-interval opts)})
         _ (info (pr-str nemesis))
         ]
     (merge tests/noop-test
            opts
            workload
            {:checker    (checker/compose
-                         {:perf        (checker/perf
-                                        {:nemeses (:perf nemesis)})
-                          :clock       (checker/clock-plot)
-                          :crash       (crash-checker)
-                          :stats       (checker/stats)
-                          :exceptions  (checker/unhandled-exceptions)
-                          :workload    (:checker workload)})
+                          {:perf        (checker/perf
+                                          {:nemeses (:perf nemesis)})
+                           :clock       (checker/clock-plot)
+                           :crash       (crash-checker)
+                           :stats       (checker/stats)
+                           :exceptions  (checker/unhandled-exceptions)
+                           :workload    (:checker workload)})
             :db         db
             :generator  (->> (:generator workload)
                              (gen/stagger (/ (:rate opts)))
@@ -101,11 +104,13 @@
             :name       (str "redis " (:version opts)
                              " (raft " (:raft-version opts) ") "
                              (when (:follower-proxy opts)
-                                   "proxy ")
+                               "proxy ")
                              (name (:workload opts)) " "
                              (str/join "," (map name (:nemesis opts))))
             :nemesis    (:nemesis nemesis)
-            :os         debian/os})))
+            :os         debian/os}))
+
+  )
 
 (def cli-opts
   "Options for test runners."
@@ -172,19 +177,37 @@
   "Takes parsed CLI options and constructs a sequence of test options, by
   combining all workloads and nemeses."
   [opts]
+
+  (println "[all-tests]: generate arguements for redis-test")
   (let [nemeses     (if-let [n (:nemesis opts)]  [n] standard-nemeses)
         workloads   (if-let [w (:workload opts)] [w] standard-workloads)
         counts      (range (:test-count opts))]
     (->> (for [i counts, n nemeses, w workloads]
-           (assoc opts :nemesis n :workload w))
-         (map redis-test))))
+           (assoc opts :nemesis n :workload w)
+         )
+
+         (doseq [[k v] opts] (println "\t" k v))
+         (map redis-test)
+
+     ))
+
+
+
+  (println "[all-tests]: END")
+)
 
 (defn -main
   "Handles CLI args."
   [& args]
+
+  (println "BEGIN REDIS")
+
   (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
                                       :opt-spec cli-opts})
                    (cli/single-test-cmd {:test-fn  redis-test
                                          :opt-spec cli-opts})
                    (cli/serve-cmd))
-            args))
+            args)
+
+  (println "BEGIN REDIS")
+)
