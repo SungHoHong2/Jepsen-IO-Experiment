@@ -173,6 +173,9 @@
   combining all workloads and nemeses."
   [opts]
 
+  (println "[all-tests]:" (:test-count opts))
+
+
   (println "[all-tests]: generate arguements for redis-test")
   (let [nemeses     (if-let [n (:nemesis opts)]  [n] standard-nemeses)
         workloads   (if-let [w (:workload opts)] [w] standard-workloads)
