@@ -181,7 +181,9 @@
            (assoc opts :nemesis n :workload w)
          )
 
-  (println "[all-tests]: " (type opts))
+  (println "[all-tests]: " (first(opts)))
+
+  (println "passed the opts arguments to the redis test")
 ;         (map redis-test)
      ))
   (println "[all-tests]: END")
