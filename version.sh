@@ -102,6 +102,20 @@ then
         lein install
         # run the test
         lein run test-all
+
+    elif [ "$2" = "redis" ]
+    then
+        # ./version.sh elle redis
+        cp elle/$3/append.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/client.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/core.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/db.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
+
+        cd /redis
+        lein install
+        lein run test-all
+
     fi
 
 else
