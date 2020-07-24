@@ -182,9 +182,15 @@
 (defn -main
   "Handles CLI args."
   [& args]
-  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
-                                      :opt-spec cli-opts})
-                   (cli/single-test-cmd {:test-fn  redis-test
-                                         :opt-spec cli-opts})
-                   (cli/serve-cmd))
-            args))
+
+  (println "BEGIN REDIS")
+
+;  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
+;                                      :opt-spec cli-opts})
+;                   (cli/single-test-cmd {:test-fn  redis-test
+;                                         :opt-spec cli-opts})
+;                   (cli/serve-cmd))
+;            args)
+
+  (println "BEGIN REDIS")
+)
