@@ -105,12 +105,13 @@ then
 
     elif [ "$2" = "redis" ]
     then
+
         # ./version.sh elle redis
-        cp elle/$3/append.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/client.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/core.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/db.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$2/append.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$2/client.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$2/core.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$2/db.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$2/nemesis.clj /jepsen/redis/src/jepsen/redis/
 
         cd /redis
         lein install
