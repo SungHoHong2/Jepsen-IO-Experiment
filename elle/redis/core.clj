@@ -183,12 +183,8 @@
            (assoc opts :nemesis n :workload w)
          )
 
-         (doseq [key (keys opts)]
-           (printf "%s %s%n" key (get-in opts [key :z])))
+         (doseq [[k v] opts] (prn k v))
 
-         (println "before" opts)
-
-;         (map redis-test)
      ))
 
   (println "after" opts)
