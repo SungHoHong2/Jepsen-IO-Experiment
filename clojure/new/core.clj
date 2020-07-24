@@ -21,7 +21,6 @@
     y)
 
   (defn pluralise
-    "Pluralise a given string value"
     [animal]
     (str string "s"))
 ;
