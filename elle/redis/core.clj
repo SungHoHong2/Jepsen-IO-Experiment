@@ -183,7 +183,7 @@
            (assoc opts :nemesis n :workload w)
          )
 
-         (doseq [[k v] opts] (prn k v))
+         (doseq [[k v] opts] (println k v))
 
      ))
 
