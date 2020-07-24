@@ -20,7 +20,7 @@
         :when (even? y)]
     y)
 
-  (defn pluralise
+  (def pluralise
     [animal]
     (str string "s"))
 ;
