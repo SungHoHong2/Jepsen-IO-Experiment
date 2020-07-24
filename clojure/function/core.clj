@@ -4,7 +4,7 @@
 
 (defn -main [& args]
 
-  ; Basic functions
+  (println "Basic variables")
   (def x 1)
   (def y 1.25)
   (def str1 "Hello")
@@ -12,10 +12,10 @@
   (println y)
   (println str1)
 
-  ; Anonymous function
+  (println "\nAnonymous function")
   ((fn [x] (println(* 2 x))) 2)
 
-  ; Clojure functions
+  (println "\nNormal function")
   (defn demo1 [] (* 2 2))
   (defn demo2 [x] (* 2 x))
   (defn demo3 [x y] (* 2 x y))
@@ -24,7 +24,7 @@
   (println(demo2 1))
   (println(demo3 2 3))
 
-  ; Variadic Functions
+  (println "\nFunction with flexible number of variables")
   (defn demo
     [message & others]
     (
@@ -33,7 +33,7 @@
   )
   (println(demo "Hello" "This" "is" "the" "message"))
 
-  ; Higher Order Functions
+  (println "\nHigher order functions")
   (println(filter even? (range 0 10)))
 
 

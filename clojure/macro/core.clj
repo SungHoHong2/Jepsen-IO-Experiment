@@ -7,9 +7,7 @@
   []
   `(println "I'm happy!"))
 
-
 (defn -main [& args]
   (println :expanded (macroexpand '(happy)))
   (happy)
-
-  )
+)
