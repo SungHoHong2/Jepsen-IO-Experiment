@@ -181,7 +181,10 @@
            (assoc opts :nemesis n :workload w)
          )
 
-  (println "[all-tests]: " (first(opts)))
+         ; (println "[all-tests]: " opts)
+         (doseq [item (keys opts)]
+           (println item))
+
 
   (println "passed the opts arguments to the redis test")
 ;         (map redis-test)
