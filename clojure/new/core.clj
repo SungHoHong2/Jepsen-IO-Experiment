@@ -3,7 +3,7 @@
 
 (defn -main [& args]
 
-  (println "assoc")
+  (println "assoc BEGIN")
   (def test1 {})
   (assoc test1 :key1 "value" :key2 "another value")
   (println "assoc empty hashmap: " test1)
@@ -12,6 +12,9 @@
   (def modified (assoc test2 :fnam "Sue"))
   (println "before assoc" test2)
   (println "after assoc" modified)
+  (println "assoc END")
+
+
 
 
 )
