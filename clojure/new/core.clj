@@ -4,7 +4,7 @@
 (defn pluralise
   "Pluralise a given string value"
   [animal]
-  (str string "s"))
+  (str animal "s"))
 
 
 (defn -main [& args]
