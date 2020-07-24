@@ -22,9 +22,9 @@
 
   (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
 
-  (defn pluralise
-    [animal]
-    (str string "s"))
+;  (defn pluralise
+;    [animal]
+;    (str string "s"))
 ;
 ;  (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
 ;  (println animals)
