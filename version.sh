@@ -105,7 +105,6 @@ then
 
     elif [ "$2" = "redis" ]
     then
-
         # ./version.sh elle redis
         cp elle/$2/append.clj /jepsen/redis/src/jepsen/redis/
         cp elle/$2/client.clj /jepsen/redis/src/jepsen/redis/
