@@ -3,6 +3,12 @@
 
 (defmacro Simple [] (println "Hello"))
 
+(defmacro happy
+  []
+  `(println "I'm happy!"))
+
+
 (defn -main [& args]
-  (macroexpand '(Simple))
-)
+  (println :expanded (macroexpand '(happy)))
+  (happy)
+  )
