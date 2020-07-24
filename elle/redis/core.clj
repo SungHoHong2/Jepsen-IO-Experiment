@@ -173,13 +173,14 @@
   combining all workloads and nemeses."
   [opts]
 
-  (println "all-tests BEGIN " opts)
+  (println "[all-tests]: generate arguements for redis-test")
   (let [nemeses     (if-let [n (:nemesis opts)]  [n] standard-nemeses)
         workloads   (if-let [w (:workload opts)] [w] standard-workloads)
         counts      (range (:test-count opts))]
     (->> (for [i counts, n nemeses, w workloads]
-           (assoc opts :nemesis n :workload w)
+           (println (assoc opts :nemesis n :workload w))
          )
+
          (println "[FRISK]" opts)
 ;         (map redis-test)
      ))
