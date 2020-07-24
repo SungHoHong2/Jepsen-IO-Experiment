@@ -181,8 +181,7 @@
            (assoc opts :nemesis n :workload w))
 
          (doseq [[k v] opts] (println "\t" k v))
-
-         ;(map redis-test)
+         (map redis-test)
     )
   )
 )
