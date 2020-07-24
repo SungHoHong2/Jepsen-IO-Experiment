@@ -175,7 +175,6 @@
 
   (println "[all-tests]:" (:test-count opts))
 
-
   (println "[all-tests]: generate arguements for redis-test")
   (let [nemeses     (if-let [n (:nemesis opts)]  [n] standard-nemeses)
         workloads   (if-let [w (:workload opts)] [w] standard-workloads)
@@ -187,6 +186,7 @@
          (doseq [key (keys opts)]
            (printf "%s %s%n" key (get-in opts [key :z])))
 
+         (println opts)
 
 
   (println "passed the opts arguments to the redis test")
