@@ -20,6 +20,8 @@
         :when (even? y)]
     y)
 
+  (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
+
   (def pluralise
     [animal]
     (str string "s"))
