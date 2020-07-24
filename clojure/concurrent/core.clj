@@ -15,7 +15,7 @@
   (change "Mark")
   (println @names)
 
-  (println "Create two functions with ref")
+  (println "\nCreate two functions with ref")
   (def var1 (ref 10))
   (def var2 (ref 20))
   (println @var1 @var2)
