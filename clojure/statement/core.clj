@@ -32,6 +32,12 @@
     )
   )
 
+  (for [x [0 1 2 3 4 5]
+        :let [y (* x 3)]
+        :when (even? y)]
+    y)
+
+
   (if ( = 2 2)
     (println "Values are equal")
     (println "Values are not equal")
