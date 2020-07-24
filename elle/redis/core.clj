@@ -71,44 +71,44 @@
 
   (println "[redis-test]" opts)
 
-;  (let [workload ((workloads (:workload opts)) opts)
-;        db        (rdb/redis-raft)
-;        nemesis   (nemesis/package
-;                    {:db      db
-;                     :nodes   (:nodes opts)
-;                     :faults  (set (:nemesis opts))
-;                     :partition {:targets [:primaries
-;                                           :majority
-;                                           :majorities-ring]}
-;                     :pause     {:targets [:primaries :majority]}
-;                     :kill      {:targets [:primaries :majority :all]}
-;                     :interval  (:nemesis-interval opts)})
-;        _ (info (pr-str nemesis))
-;        ]
-;    (merge tests/noop-test
-;           opts
-;           workload
-;           {:checker    (checker/compose
-;                          {:perf        (checker/perf
-;                                          {:nemeses (:perf nemesis)})
-;                           :clock       (checker/clock-plot)
-;                           :crash       (crash-checker)
-;                           :stats       (checker/stats)
-;                           :exceptions  (checker/unhandled-exceptions)
-;                           :workload    (:checker workload)})
-;            :db         db
-;            :generator  (->> (:generator workload)
-;                             (gen/stagger (/ (:rate opts)))
-;                             (gen/nemesis (:generator nemesis))
-;                             (gen/time-limit (:time-limit opts)))
-;            :name       (str "redis " (:version opts)
-;                             " (raft " (:raft-version opts) ") "
-;                             (when (:follower-proxy opts)
-;                               "proxy ")
-;                             (name (:workload opts)) " "
-;                             (str/join "," (map name (:nemesis opts))))
-;            :nemesis    (:nemesis nemesis)
-;            :os         debian/os}))
+  (let [workload ((workloads (:workload opts)) opts)
+        db        (rdb/redis-raft)
+        nemesis   (nemesis/package
+                    {:db      db
+                     :nodes   (:nodes opts)
+                     :faults  (set (:nemesis opts))
+                     :partition {:targets [:primaries
+                                           :majority
+                                           :majorities-ring]}
+                     :pause     {:targets [:primaries :majority]}
+                     :kill      {:targets [:primaries :majority :all]}
+                     :interval  (:nemesis-interval opts)})
+        _ (info (pr-str nemesis))
+        ]
+    (merge tests/noop-test
+           opts
+           workload
+           {:checker    (checker/compose
+                          {:perf        (checker/perf
+                                          {:nemeses (:perf nemesis)})
+                           :clock       (checker/clock-plot)
+                           :crash       (crash-checker)
+                           :stats       (checker/stats)
+                           :exceptions  (checker/unhandled-exceptions)
+                           :workload    (:checker workload)})
+            :db         db
+            :generator  (->> (:generator workload)
+                             (gen/stagger (/ (:rate opts)))
+                             (gen/nemesis (:generator nemesis))
+                             (gen/time-limit (:time-limit opts)))
+            :name       (str "redis " (:version opts)
+                             " (raft " (:raft-version opts) ") "
+                             (when (:follower-proxy opts)
+                               "proxy ")
+                             (name (:workload opts)) " "
+                             (str/join "," (map name (:nemesis opts))))
+            :nemesis    (:nemesis nemesis)
+            :os         debian/os}))
 
   )
 
