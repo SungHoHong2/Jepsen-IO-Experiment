@@ -10,7 +10,7 @@
 
 
   (def test2 {:account-no 12345678 :lname "Jones" :fnam "Fred"})
-  (assoc test2 :fnam "Sue")
+  (println (assoc test2 :fnam "Sue"))
   (println test2)
 
 
