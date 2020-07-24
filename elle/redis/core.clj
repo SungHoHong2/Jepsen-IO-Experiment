@@ -181,7 +181,6 @@
            (println (assoc opts :nemesis n :workload w))
          )
 
-         (println "[FRISK]" opts)
 ;         (map redis-test)
      ))
   (println "all-tests END ")
