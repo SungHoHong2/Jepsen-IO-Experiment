@@ -103,14 +103,21 @@ then
         # run the test
         lein run test-all
 
-    elif [ "$2" = "redis" ]
+    elif [ "$2" = "debug" ]
     then
+
+        if [ -z "$3" ]
+        then
+            echo "no directory to run"
+            exit
+        fi
+
         # ./version.sh elle redis
-        cp elle/$2/append.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$2/client.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$2/core.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$2/db.clj /jepsen/redis/src/jepsen/redis/
-        cp elle/$2/nemesis.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/append.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/client.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/core.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/db.clj /jepsen/redis/src/jepsen/redis/
+        cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
 
         cd /redis
         lein install
