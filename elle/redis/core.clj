@@ -184,9 +184,9 @@
            (assoc opts :nemesis n :workload w)
          )
 
-         ; (println "[all-tests]: " opts)
-         (doseq [item (keys opts)]
-           (println item (get-in opts [key :concurrency]))  )
+         (doseq [key (keys opts)]
+           (printf "%s %s%n" key (get-in opts [key :z])))
+
 
 
   (println "passed the opts arguments to the redis test")
