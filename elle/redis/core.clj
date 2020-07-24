@@ -186,10 +186,12 @@
          (doseq [key (keys opts)]
            (printf "%s %s%n" key (get-in opts [key :z])))
 
-         (println opts)
+         (println "before" opts)
 
 ;         (map redis-test)
      ))
+
+  (println "after" opts)
 
   (println "passed the opts arguments to the redis test")
 
