@@ -188,10 +188,11 @@
 
          (println opts)
 
-
-  (println "passed the opts arguments to the redis test")
 ;         (map redis-test)
      ))
+
+  (println "passed the opts arguments to the redis test")
+
   (println "[all-tests]: END")
 )
 
