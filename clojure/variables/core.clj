@@ -11,21 +11,19 @@
   (println (type y))
 
   (println "\nList")
-  (print "Append: ") (println (list 1 2 3 4))
-
+  (println (list 1 2 3 4))
   (println (list 'a 'b 'c 'd))
   (print "Append: ") (println (list* 1 [2,3]))
   (print "Append: ") (println (cons 0 (list 1 2,3)))
   (print "Append Multiple: ") (println (conj (list 1 2,3) 4 5))
-
   (print "First element: ") (println (first (list 1 2,3)))
-  (print "Third element: ") (println (nth (list 1 2,3) 2))
+  (print "nth(2) element: ") (println (nth (list 1 2,3) 2))
 
   (println "\nSet")
   (println (set '(1 1 2 2)))
   (println (sorted-set 3 2 1))
-  (print "Get: ") (println (get (set '(3 2 1)) 2))
-  (print "Get: ") (println (get (set '(3 2 1)) 3))
+  (print "Get(2): ") (println (get (set '(3 2 1)) 2))
+  (print "Get(3): ") (println (get (set '(3 2 1)) 3))
 
   (println "\nVector")
   (println (vector 1 2 3))
@@ -52,8 +50,6 @@
 
   (def my-map {"a" 1 "b" 2})
   (let [{a "a" b "b"} my-map] (println a b))
-
-
 
 )
 

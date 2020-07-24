@@ -5,12 +5,17 @@
 (defn -main [& args]
 
   (defstruct Employee :EmployeeName :Employeeid)
+
+  (println "Initialize with struct")
   (def emp (struct Employee "John" 1))
   (println emp)
 
+  (println "Initialize with struct-map")
   (def emp2 (struct-map Employee :EmployeeName "Chris" :Employeeid 2))
   (println emp2)
 
+
+  (println "-----")
   (println (:Employeeid emp))
   (println (:EmployeeName emp))
 
