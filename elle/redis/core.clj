@@ -179,9 +179,9 @@
         counts      (range (:test-count opts))]
     (->> (for [i counts, n nemeses, w workloads]
            (assoc opts :nemesis n :workload w)
-           (println "[FRISK]" opts)
          )
-         ; (map redis-test)
+         (println "[FRISK]" opts)
+;         (map redis-test)
      ))
   (println "all-tests END ")
 
