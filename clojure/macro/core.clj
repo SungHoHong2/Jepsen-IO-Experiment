@@ -11,4 +11,11 @@
 (defn -main [& args]
   (println :expanded (macroexpand '(happy)))
   (happy)
+
+
+  (macroexpand '(Simple))
+  (macroexpand '(Simple))
+  (macroexpand '(Simple))
+
+
   )
