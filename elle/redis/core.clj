@@ -172,12 +172,19 @@
   "Takes parsed CLI options and constructs a sequence of test options, by
   combining all workloads and nemeses."
   [opts]
-  (let [nemeses     (if-let [n (:nemesis opts)]  [n] standard-nemeses)
-        workloads   (if-let [w (:workload opts)] [w] standard-workloads)
-        counts      (range (:test-count opts))]
-    (->> (for [i counts, n nemeses, w workloads]
-           (assoc opts :nemesis n :workload w))
-         (map redis-test))))
+
+  (println "all-tests BEGIN " opts)
+
+;  (let [nemeses     (if-let [n (:nemesis opts)]  [n] standard-nemeses)
+;        workloads   (if-let [w (:workload opts)] [w] standard-workloads)
+;        counts      (range (:test-count opts))]
+;    (->> (for [i counts, n nemeses, w workloads]
+;           (println "[FRISK]:")
+;           (assoc opts :nemesis n :workload w))
+;         (map redis-test)))
+  (println "all-tests END ")
+
+)
 
 (defn -main
   "Handles CLI args."
@@ -185,12 +192,12 @@
 
   (println "BEGIN REDIS")
 
-;  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
-;                                      :opt-spec cli-opts})
-;                   (cli/single-test-cmd {:test-fn  redis-test
-;                                         :opt-spec cli-opts})
-;                   (cli/serve-cmd))
-;            args)
+  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
+                                      :opt-spec cli-opts})
+                   (cli/single-test-cmd {:test-fn  redis-test
+                                         :opt-spec cli-opts})
+                   (cli/serve-cmd))
+            args)
 
   (println "BEGIN REDIS")
 )
