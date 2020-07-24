@@ -20,4 +20,17 @@
         :when (even? y)]
     y)
 
+  (map (fn [animal] (str animal "s")) ["pig" "cow" "goat" "cat" "dog" "rabbit"])
+;  (defn pluralise
+;    "Pluralise a given string value"
+;    [animal]
+;    (str string "s"))
+;
+;  (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
+;  (println animals)
+;  (map pluralise animals)
+;  (println animals)
+
+
+
 )
