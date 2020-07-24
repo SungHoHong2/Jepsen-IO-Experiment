@@ -22,7 +22,7 @@
 
   (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
 
-  (def pluralise
+  (defn pluralise
     [animal]
     (str string "s"))
 ;
