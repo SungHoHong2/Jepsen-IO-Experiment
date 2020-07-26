@@ -28,7 +28,7 @@
     (str animal "s"))
 
     (println animals)
-    (map pluralise animals)
+    (println(map pluralise animals))
     (println animals)
 
 )
