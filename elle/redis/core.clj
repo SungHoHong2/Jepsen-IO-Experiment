@@ -68,6 +68,9 @@
 (defn redis-test
   "Builds up a Redis test from CLI options."
   [opts]
+
+  (println "[FRISK]:", opts)
+
   (let [workload ((workloads (:workload opts)) opts)
         db        (rdb/redis-raft)
         nemesis   (nemesis/package
