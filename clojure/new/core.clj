@@ -27,13 +27,8 @@
     [animal]
     (str animal "s"))
 
-
-
-;  (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
-;  (println animals)
-;  (map pluralise animals)
-;  (println animals)
-
-
+    (println animals)
+    (map pluralise animals)
+    (println animals)
 
 )
