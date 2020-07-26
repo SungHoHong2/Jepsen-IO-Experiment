@@ -20,6 +20,8 @@
 ### Conclusion 
 - Integrating the Ramcloud with Jepsen I/O is not a big deal 
 - Understanding how to **properly run the Elle is important**
+    - Trying to replicate the results of Redis testcase 
+    - Asking the author how to properly use Elle
 
 
 ### Reference 
