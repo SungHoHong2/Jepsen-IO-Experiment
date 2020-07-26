@@ -1,12 +1,6 @@
 (ns tutorial.core
   (:gen-class)) ; namespace
 
-(defn pluralise
-  "Pluralise a given string value"
-  [animal]
-  (str animal "s"))
-
-
 (defn -main [& args]
 
   (println "assoc BEGIN")
@@ -28,8 +22,13 @@
 
   (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
 
+  (defn pluralise
+    "Pluralise a given string value"
+    [animal]
+    (str animal "s"))
 
-;
+
+
 ;  (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
 ;  (println animals)
 ;  (map pluralise animals)
