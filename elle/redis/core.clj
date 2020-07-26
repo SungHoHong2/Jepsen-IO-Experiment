@@ -179,7 +179,7 @@
         counts      (range (:test-count opts))]
     (->> (for [i counts, n nemeses, w workloads]
            (assoc opts :nemesis n :workload w))
-
+         ; map the redis-test function with the parameters
          ; (doseq [[k v] opts] (println "\t" k v))
          (map redis-test)
     )
