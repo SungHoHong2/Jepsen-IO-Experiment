@@ -23,7 +23,7 @@
 
 
 ### Reference 
-- [etcd client](https://github.com/aphyr/verschlimmbesserung)
-- [redis client](https://github.com/ptaoussanis/carmine)
+- [Etcd client](https://github.com/aphyr/verschlimmbesserung)
+- [Redis client](https://github.com/ptaoussanis/carmine)
 - [Yugabyte client](https://github.com/yugabyte/cassaforte)
 
