@@ -6,11 +6,10 @@
     - Understanding the programming language syntax of Clojure
     - [Reference link](https://www.tutorialspoint.com/clojure/clojure_overview.htm) 
 - **Jepsen Tutorials**
-    - Understanding the basic usage of Jepson
     - [Scaffolding](scaffolding)
-    - [database](database)
-    - [client](client)
-    - [checker](checker)
+    - [Database](database)
+    - [Client](client)
+    - [Checker](checker)
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
 - **[Elle Experiments](elle)**
     - [Reference link](https://github.com/jepsen-io/elle)

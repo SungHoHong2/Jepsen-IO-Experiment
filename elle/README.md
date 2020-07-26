@@ -23,7 +23,6 @@
     - Trying to replicate the results of Redis testcase 
     - Asking the author how to properly use Elle
 
-
 ### Reference 
 - [Etcd client](https://github.com/aphyr/verschlimmbesserung)
 - [Redis client](https://github.com/ptaoussanis/carmine)
