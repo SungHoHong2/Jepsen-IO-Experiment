@@ -12,23 +12,14 @@
   (def modified (assoc test2 :fnam "Sue"))
   (println "before assoc" test2)
   (println "after assoc" modified)
-  (println "assoc END")
 
-
-  (for [x [0 1 2 3 4 5]
-        :let [y (* x 3)]
-        :when (even? y)]
-    y)
-
+  (println "\nmap")
   (def animals ["pig" "cow" "goat" "cat" "dog" "rabbit"])
-
   (defn pluralise
     "Pluralise a given string value"
     [animal]
     (str animal "s"))
-
     (println animals)
     (println(map pluralise animals))
-    (println animals)
 
 )
