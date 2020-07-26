@@ -1,18 +1,29 @@
-### Redis Test  
+# Elle Experiments 
 
-- `Jepsen` distributed systems testing library
-- uses `Elle` to find transactional anomalies up to strict serializability
+### Workload Scope 
 
-```
-git clone https://github.com/jepsen-io/redis.git
-lein run test-all
-```
+1. Integration of `Ramcloud` with `Jepsen` 
+- `Preconfigured Ramcloud` repository Jepsen can install the RamCloud
+    - Jepsen uses Linux command API to install the database 
+    - Allowing the Jepsen to run make is suffice
+- `Predefined with a fixed choices of Ramcloud requests` can easily implement Jepsen Client 
+    - `Etcd` client contains `426 lines` of code
+        - Jepsen client converts Java code to http requests
+    -  `Redis` and `Yugabyte` client contains `1692 ~ 2581 lines` of code
+        - The complexity of the client-side is due to the number of configurable arguments of the database requests 
+            - For example, consistency level, locks, synchronous, asynchronous
+     
+2. Understanding the results from Elle
+- `Redis` provides a simple but primitive example  
+- `Yugabyte` provides a complex consistency check with half-baked code 
 
-### YugaByte Test
+### Conclusion 
+- Integrating the Ramcloud with Jepsen I/O is not a big deal 
+- Understanding how to **properly run the Elle is important**
 
-```
-cd jepsen/yugabyte 
-lein run test -o debian --version 1.2.10.0 --url https://downloads.yugabyte.com/yugabyte-ce-1.2.10.0-linux.tar.gz --workload ycql/counter --nemesis partition
 
-``` 
+### Reference 
+- [etcd client](https://github.com/aphyr/verschlimmbesserung)
+- [redis client](https://github.com/ptaoussanis/carmine)
+- [Yugabyte client](https://github.com/yugabyte/cassaforte)
 

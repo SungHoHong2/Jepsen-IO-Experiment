@@ -12,8 +12,7 @@
     - [client](client)
     - [checker](checker)
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
-- **Elle**
-    - [Elle Tutorial](elle)
+- **[Elle Experiments](elle)**
     - [Reference link](https://github.com/jepsen-io/elle)
 
 ### Prerequisite
