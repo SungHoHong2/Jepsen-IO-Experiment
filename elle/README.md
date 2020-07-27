@@ -15,6 +15,7 @@
      
 2. Understanding the results from Elle
     - `Redis` provides a simple but primitive example  
+       - `Redis` provides lost update examples
     - `Yugabyte` provides a complex consistency check with half-baked code 
 
 ### Conclusion 
