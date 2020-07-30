@@ -3,6 +3,7 @@
   (:require [clojure.tools.logging :refer [info warn]]
             [clojure.pprint :refer [pprint]]
             [elle.core :as elle]
+            ; this may cause an error ...
             [elle.list-append :as a]
             [jepsen [checker :as checker]
                     [client :as client]
