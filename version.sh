@@ -95,15 +95,18 @@ then
         echo "[Update]: modify to a valid link to the git repo"
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
 
-    elif [ "$2" = "run" ]
-    then
-        cd /redis
-        # updates the changes for all the nodes
-        lein install
-        # run the test
-        lein run test-all
 
-    elif [ "$2" = "debug" ]
+    elif [ "$2" = "demo" ]
+    then
+        # copy the main function
+        cp elle/$2/project.clj /jepsen/jepsen.etcdemo/project.clj
+        cp elle/$2/etcdemo.clj /jepsen/jepsen.etcdemo/src/jepsen/etcdemo.clj
+        # invoke the main function
+        cd /jepsen/jepsen.etcdemo/
+        lein run test
+
+
+    elif [ "$2" = "run" ]
     then
 
         if [ -z "$3" ]
@@ -119,7 +122,7 @@ then
         cp elle/$3/db.clj      /jepsen/redis/src/jepsen/redis/
         cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
 
-        cd /jepsen/redis
+        cd /jepsen/$3
         lein install
         lein run test-all
 

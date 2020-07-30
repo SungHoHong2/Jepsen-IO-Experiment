@@ -210,6 +210,6 @@
 ;                   (cli/serve-cmd))
 ;            args)
 
-  (println "BEGIN REDIS")
+  (println "END REDIS")
 
   )
