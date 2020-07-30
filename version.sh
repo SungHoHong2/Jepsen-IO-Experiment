@@ -103,8 +103,7 @@ then
         echo "[Update]: modify to a valid link to the git repo"
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
         exit
-
-    echo "howdy?2: $2"
+    fi
 
 
     files=("append.clj" "client.clj" "core.clj" "db.clj" "nemesis.clj")
@@ -121,7 +120,6 @@ then
     lein install
     lein run test-all
 
-    fi
 
 else
   echo "no argument"
