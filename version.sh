@@ -69,13 +69,11 @@ then
 
     # migrate the invalid results
     if test -f "/jepsen.etcdemo/store/latest/linear.svg"; then
-        echo "invalid result detected copying the result to repo ... "
+        echo "invalid result detected!"
         cd /jepsen/Jepsen-IO-Experiment/
+        echo "storing them in debug directory ..."
         cp /jepsen/jepsen.etcdemo/store/latest/linear.svg debug/linear-$TIMESTAMP.svg
         cp /jepsen/jepsen.etcdemo/store/latest/history.txt debug/history-$TIMESTAMP.txt
-        git add .
-        git commit -m "updated debugged SVG"
-        git push origin master
     fi
 
 elif [ "$1" = "elle" ]
