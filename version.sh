@@ -87,6 +87,8 @@ then
         exit
     fi
 
+    echo "howdy?"
+
     if [ "$2" = "outside_docker" ]
     then
         echo "outside the container"
