@@ -112,7 +112,7 @@ then
         cp elle/$3/db.clj      /jepsen/redis/src/jepsen/redis/
         cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
 
-        cd /jepsen/$3
+        cd /jepsen/redis
         lein install
         lein run test-all
 
