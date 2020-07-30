@@ -42,11 +42,6 @@
 
   ; G2: Anti-dependency Cycles
 
-
-
-
-
-
   ; Dirty Read
 
   ; Dirty Write

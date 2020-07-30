@@ -7,7 +7,7 @@
     - [Reference link](https://www.tutorialspoint.com/clojure/clojure_overview.htm) 
 - **Jepsen Tutorials**
     - Understanding the basic usage `Etcd` with Jepson
-        - [Scaffolding](scaffolding)
+        - [Scaffolding](tutorial/scaffolding)
         - [Database](database)
         - [Client](client)
         - [Checker](checker)

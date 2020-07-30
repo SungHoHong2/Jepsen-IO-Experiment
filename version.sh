@@ -39,7 +39,7 @@ then
     fi
 
 # ./version jepsen ( scaffolding, database, client, checker(+ time-limit), elle)
-elif [ "$1" = "jepsen" ]
+elif [ "$1" = "tutorial" ]
 then
 
     if [ -z "$2" ]
@@ -56,11 +56,11 @@ then
         lein new jepsen.etcdemo
 
         cd /Jepsen-IO-Experiment/
-        cp scaffolding/project.clj /jepsen.etcdemo/project.clj
+        cp tutorial/scaffolding/project.clj /jepsen.etcdemo/project.clj
     fi
 
     # copy the main function
-    cp $2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+    cp tutorial/$2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
 
     # invoke the main function
     cd /jepsen.etcdemo
