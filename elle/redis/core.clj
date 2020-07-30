@@ -3,7 +3,6 @@
     (:require [clojure.tools.logging :refer [info warn]]
               [clojure [pprint :refer [pprint]]
                [string :as str]]
-              [elle.list-append :as a]
               [jepsen [cli :as cli]
                [checker :as checker]
                [control :as c]
@@ -194,21 +193,14 @@
   "Handles CLI args."
   [& args]
 
-  (println "BEGIN REDIS (lets try to run elle append here!)")
+  (println "BEGIN REDIS")
 
-  (def h [{:type :ok, :value [[:append :x 1] [:r :y [1]]]}
-          {:type :ok, :value [[:append :x 2] [:append :y 1]]}
-          {:type :ok, :value [[:r :x [1 2]]]}])
-
-  (pprint (a/check {:consistency-models [:serializable], :directory "out"} h))
-
-
-;  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
-;                                      :opt-spec cli-opts})
-;                   (cli/single-test-cmd {:test-fn  redis-test
-;                                         :opt-spec cli-opts})
-;                   (cli/serve-cmd))
-;            args)
+  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
+                                      :opt-spec cli-opts})
+                   (cli/single-test-cmd {:test-fn  redis-test
+                                         :opt-spec cli-opts})
+                   (cli/serve-cmd))
+            args)
 
   (println "END REDIS")
 
