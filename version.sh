@@ -105,23 +105,19 @@ then
             exit
         fi
 
-        arr=("element1" "element2" "element3")
-
-        for file in "${arr[@]}"
+        files=("append.clj" "client.clj" "core.clj" "db.clj" "nemesis.clj")
+        for file in "${files[@]}"
         do
-            echo $file
+            if test -f "elle/$3/$file"; then
+                echo "copied elle/$3/$file"
+                cp elle/$3/$file  /jepsen/redis/src/jepsen/redis/
+            fi
         done
-#        # ./version.sh elle run redis
-#        cp elle/$3/append.clj  /jepsen/redis/src/jepsen/redis/
-#        cp elle/$3/client.clj  /jepsen/redis/src/jepsen/redis/
-#        cp elle/$3/core.clj    /jepsen/redis/src/jepsen/redis/
-#        cp elle/$3/db.clj      /jepsen/redis/src/jepsen/redis/
-#        cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
-#
-#        # uses redis repository
-#        cd /jepsen/redis
-#        lein install
-#        lein run test-all
+
+        # uses redis repository
+        cd /jepsen/redis
+        lein install
+        lein run test-all
 
     fi
 
