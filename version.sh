@@ -105,7 +105,9 @@ then
             exit
         fi
 
-        for file in [ "append.clj", "client.clj", "core.clj" ]
+        arr=("element1" "element2" "element3")
+
+        for file in "${arr[@]}"
         do
             echo $file
         done
