@@ -48,13 +48,23 @@
 
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1b))
 
-  ; G1c: Circular Information Flow
+    ; G1c: Circular Information Flow, T2 writes x after T1, but T1 observes T2's write on y.
+    (def G1c [
+              ; transaction 1
+              {:type :ok, :value [[:append :x 1] [:r :y [1]]]}
+              ; transaction 2
+              {:type :ok, :value [[:append :x 2] [:append :y 1]]}
+              ; transaction 3: T1 -> T2 but T1 seen T2's write
+              {:type :ok, :value [[:r :x [1 2]] [:r :y [1]]]}
+              ])
+
+    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1c))
+
+    ; G2: Anti-dependency Cycles
 
 
 
 
-
-  ; G2: Anti-dependency Cycles
 
   ; Dirty Read
 
