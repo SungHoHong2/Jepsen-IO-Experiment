@@ -196,6 +196,11 @@
 
   (println "BEGIN REDIS (lets try to run elle append here!)")
 
+  (def h [{:type :ok, :value [[:append :x 1] [:r :y [1]]]}
+          {:type :ok, :value [[:append :x 2] [:append :y 1]]}
+          {:type :ok, :value [[:r :x [1 2]]]}])
+
+  (pprint (a/check {:consistency-models [:serializable], :directory "out"} h))
 
 
 ;  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
