@@ -105,17 +105,21 @@ then
             exit
         fi
 
-        # ./version.sh elle run redis
-        cp elle/$3/append.clj  /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/client.clj  /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/core.clj    /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/db.clj      /jepsen/redis/src/jepsen/redis/
-        cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
-
-        # uses redis repository
-        cd /jepsen/redis
-        lein install
-        lein run test-all
+        for file in [ "append.clj", "client.clj", "core.clj" ]
+        do
+            echo $file
+        done
+#        # ./version.sh elle run redis
+#        cp elle/$3/append.clj  /jepsen/redis/src/jepsen/redis/
+#        cp elle/$3/client.clj  /jepsen/redis/src/jepsen/redis/
+#        cp elle/$3/core.clj    /jepsen/redis/src/jepsen/redis/
+#        cp elle/$3/db.clj      /jepsen/redis/src/jepsen/redis/
+#        cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
+#
+#        # uses redis repository
+#        cd /jepsen/redis
+#        lein install
+#        lein run test-all
 
     fi
 
