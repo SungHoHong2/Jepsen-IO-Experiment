@@ -60,10 +60,16 @@
 
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1c))
 
+
     ; G2: Anti-dependency Cycles
+    (def G2 [
+               ; transaction 1
+               {:type :ok, :value [[:append :x 1] [:r :y]]}
+               ; transaction 2
+               {:type :ok, :value [[:append :y 1] [:r :x]]}
+               ])
 
-
-
+    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G2))
 
 
   ; Dirty Read
