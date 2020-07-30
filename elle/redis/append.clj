@@ -3,6 +3,7 @@
   (:require [clojure.tools.logging :refer [info warn]]
             [clojure.pprint :refer [pprint]]
             [elle.core :as elle]
+            [elle.list-append :as a]
             [jepsen [checker :as checker]
                     [client :as client]
                     [generator :as gen]
