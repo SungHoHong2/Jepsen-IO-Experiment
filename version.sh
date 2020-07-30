@@ -112,6 +112,7 @@ then
         cp elle/$3/db.clj      /jepsen/redis/src/jepsen/redis/
         cp elle/$3/nemesis.clj /jepsen/redis/src/jepsen/redis/
 
+        # uses redis repository
         cd /jepsen/redis
         lein install
         lein run test-all
