@@ -103,7 +103,6 @@ then
         exit
     fi
 
-
     files=("append.clj" "client.clj" "core.clj" "db.clj" "nemesis.clj")
     for file in "${files[@]}"
     do

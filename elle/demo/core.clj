@@ -23,9 +23,17 @@
 (defn -main
   [& args]
 
-  (println "BEGIN Elle")
 
-  ; G0: Write Cycles
+  (println "G0")
+    (def G0 [{:type :ok, :value [[:append :x 1] [:append :y 1]]}
+            {:type :ok, :value [[:append :x 2] [:append :y 2]]}
+            {:type :ok, :value [[:r :x [1 2]] [:r :x [1 2]]]}])
+
+    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G0))
+
+
+
+
 
 
   ; G1a: Aborted Read
@@ -33,11 +41,7 @@
   ; G1b: Intermediate Reads
 
   ; G1c: Circular Information Flow
-;  (def h [{:type :ok, :value [[:append :x 1] [:r :y [1]]]}
-;          {:type :ok, :value [[:append :x 2] [:append :y 1]]}
-;          {:type :ok, :value [[:r :x [1 2]]]}])
-;
-;  (pprint (a/check {:consistency-models [:serializable], :directory "out"} h))
+
 
 
   ; G2: Anti-dependency Cycles
@@ -54,6 +58,5 @@
 
 
 
-  (println "END Elle")
 
   )
