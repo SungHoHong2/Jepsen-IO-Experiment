@@ -1,23 +1,23 @@
-;(ns jepsen.redis.core
-;    "Top-level test runner, integration point for various workloads and nemeses."
-;    (:require [elle.list-append :as a]
-;              [clojure [pprint :refer [pprint]]
-;               [string :as str]]))
-
 (ns jepsen.redis.core
-    (:refer-clojure :exclude [test])
-    (:require [clojure [pprint :refer [pprint]]
-               [test :refer :all]]
-              [elle [core :as elle]
-               [core-test :refer [read-history]]
-               [list-append :refer :all]
-               [graph :as g]
-               [util :refer [map-vals]]]
-              [jepsen.txn :as txn]
-              [knossos [history :as history]
-               [op :as op]]
-              [slingshot.slingshot :refer [try+ throw+]]))
+    "Top-level test runner, integration point for various workloads and nemeses."
+    (:require [elle.list-append :as a]
+              [clojure [pprint :refer [pprint]]
+               [string :as str]]))
 
+;(ns jepsen.redis.core
+;    (:refer-clojure :exclude [test])
+;    (:require [clojure [pprint :refer [pprint]]
+;               [test :refer :all]]
+;              [elle [core :as elle]
+;               [core-test :refer [read-history]]
+;               [list-append :refer :all]
+;               [graph :as g]
+;               [util :refer [map-vals]]]
+;              [jepsen.txn :as txn]
+;              [knossos [history :as history]
+;               [op :as op]]
+;              [slingshot.slingshot :refer [try+ throw+]]))
+;
 
 
 (defn -main
