@@ -3,7 +3,7 @@
     (:require [clojure.tools.logging :refer [info warn]]
               [clojure [pprint :refer [pprint]]
                [string :as str]]
-              [elle.list-append :as ta]
+              [elle.list-append :as a]
               [jepsen [cli :as cli]
                [checker :as checker]
                [control :as c]
@@ -195,6 +195,8 @@
   [& args]
 
   (println "BEGIN REDIS (lets try to run elle append here!)")
+
+
 
 ;  (cli/run! (merge (cli/test-all-cmd {:tests-fn all-tests
 ;                                      :opt-spec cli-opts})
