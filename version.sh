@@ -104,13 +104,6 @@ then
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
         exit
 
-
-    if [ -z "$2" ]
-    then
-        echo "no directory to run"
-        exit
-    fi
-
     files=("append.clj" "client.clj" "core.clj" "db.clj" "nemesis.clj")
     for file in "${files[@]}"
     do
