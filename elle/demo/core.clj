@@ -20,23 +20,33 @@
               ; transaction 2
               {:type :ok, :value [[:append :x 2] [:append :y 2]]}
               ; transaction 3: reads updated x and y from both T1 and T2
-              {:type :ok, :value [[:r :x [1 2]] [:r :y [2 1]]]}])
+              {:type :ok, :value [[:r :x [1 2]] [:r :y [2 1]]]}
+            ])
 
     ; assuming that the database is serializable and returns the anomaly to directory out
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G0))
 
 
-    ; G1a: Aborted Read: T2 sees T1's failed write
+    ; G1a: Aborted Read, T2 sees T1's failed write
     (def G1a [
               ; transaction 1
               {:type :fail, :value [[:append :x 1]]}
               ; transaction 2: reads the aborted x from T1
-              {:type :ok, :value [[:r :x [1]]]}])
+              {:type :ok, :value [[:r :x [1]]]}
+             ])
 
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1a))
 
 
-  ; G1b: Intermediate Reads
+    ; G1b: Intermediate Reads, T2 sees T1's intermediate write
+    (def G1b [
+              ; transaction 1
+              {:type :ok, :value [[:append :x 1] [:append :x 2]]}
+              ; transaction 2
+              {:type :ok, :value [[:r :x [1]]]}
+             ])
+
+    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1b))
 
   ; G1c: Circular Information Flow
 
