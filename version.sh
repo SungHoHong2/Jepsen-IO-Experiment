@@ -38,7 +38,7 @@ then
         lein run
     fi
 
-# ./version jepsen ( scaffolding, database, client, checker(+ time-limit), elle)
+# ./version tutorial ( scaffolding, database, client, checker(+ time-limit), elle)
 elif [ "$1" = "tutorial" ]
 then
 
@@ -51,28 +51,28 @@ then
     # copy the dependencies
     if [ "$2" = "scaffolding" ]
     then
-        cd /
+        cd /jepsen/
         rm -rf jepsen.etcdemo
         lein new jepsen.etcdemo
 
-        cd /Jepsen-IO-Experiment/
-        cp tutorial/scaffolding/project.clj /jepsen.etcdemo/project.clj
+        cd /jepsen/Jepsen-IO-Experiment/
+        cp tutorial/scaffolding/project.clj /jepsen/jepsen.etcdemo/project.clj
     fi
 
     # copy the main function
-    cp tutorial/$2/etcdemo.clj /jepsen.etcdemo/src/jepsen/etcdemo.clj
+    cp tutorial/$2/etcdemo.clj /jepsen/jepsen.etcdemo/src/jepsen/etcdemo.clj
 
     # invoke the main function
-    cd /jepsen.etcdemo
+    cd /jepsen/jepsen.etcdemo
     lein run test
     echo "completed $2 test case"
 
     # migrate the invalid results
     if test -f "/jepsen.etcdemo/store/latest/linear.svg"; then
         echo "invalid result detected copying the result to repo ... "
-        cd /Jepsen-IO-Experiment/
-        cp /jepsen.etcdemo/store/latest/linear.svg debug/linear-$TIMESTAMP.svg
-        cp /jepsen.etcdemo/store/latest/history.txt debug/history-$TIMESTAMP.txt
+        cd /jepsen/Jepsen-IO-Experiment/
+        cp /jepsen/jepsen.etcdemo/store/latest/linear.svg debug/linear-$TIMESTAMP.svg
+        cp /jepsen/jepsen.etcdemo/store/latest/history.txt debug/history-$TIMESTAMP.txt
         git add .
         git commit -m "updated debugged SVG"
         git push origin master
