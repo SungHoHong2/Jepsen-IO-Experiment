@@ -96,16 +96,6 @@ then
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
 
 
-    elif [ "$2" = "demo" ]
-    then
-        # copy the main function
-        cp elle/$2/project.clj /jepsen/jepsen.etcdemo/project.clj
-        cp elle/$2/etcdemo.clj /jepsen/jepsen.etcdemo/src/jepsen/etcdemo.clj
-        # invoke the main function
-        cd /jepsen/jepsen.etcdemo/
-        lein run test
-
-
     elif [ "$2" = "run" ]
     then
 
@@ -115,7 +105,7 @@ then
             exit
         fi
 
-        # ./version.sh elle redis
+        # ./version.sh elle run redis
         cp elle/$3/append.clj  /jepsen/redis/src/jepsen/redis/
         cp elle/$3/client.clj  /jepsen/redis/src/jepsen/redis/
         cp elle/$3/core.clj    /jepsen/redis/src/jepsen/redis/
