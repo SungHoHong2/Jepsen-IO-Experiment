@@ -87,8 +87,6 @@ then
         exit
     fi
 
-    echo "howdy?"
-
     if [ "$2" = "outside_docker" ]
     then
         echo "outside the container"
@@ -105,6 +103,9 @@ then
         echo "[Update]: modify to a valid link to the git repo"
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
         exit
+
+    echo "howdy?"
+
 
     files=("append.clj" "client.clj" "core.clj" "db.clj" "nemesis.clj")
     for file in "${files[@]}"
