@@ -26,7 +26,7 @@
   (println "G0")
     (def G0 [  {:type :ok, :value [[:append :x 1] [:append :y 1]]}
                {:type :ok, :value [[:append :x 2] [:append :y 2]]}
-               {:type :ok, :value [[:r :x [1 2]] [:r :x [1 2]]]}     ])
+               {:type :ok, :value [[:r :x [1 2]] [:r :y [2 1]]]}     ])
 
 ;  [{:type :ok, :value [[:append :x 2] [:append :y 2]]}
 ;   {:type :ok, :value [[:append :x 1] [:append :y 1]]}
