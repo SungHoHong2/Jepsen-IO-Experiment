@@ -80,6 +80,13 @@ then
 
 elif [ "$1" = "elle" ]
 then
+
+    if [ -z "$2" ]
+    then
+        echo "no directory to run"
+        exit
+    fi
+
     if [ "$2" = "outside_docker" ]
     then
         echo "outside the container"
@@ -87,6 +94,7 @@ then
         echo "commit 556d30549c469d5a39a0186d7e5e2af4a014d8b5, branch master, Date: Mon Jun 29 12:07:08 2020 -0400"
         echo "[Update]: Modified installation of git inside every node"
         cp elle/update/docker/Dockerfile /home/users/sungho/jepsen/docker/node/Dockerfile
+        exit
 
     elif [ "$2" = "inside_docker" ]
     then
@@ -94,30 +102,28 @@ then
         echo "commit 6c857fb16f7977cff21756acc99eb302cfdd11bd, branch: master, Date: Tue Jun 23 10:17:12 2020 -0400"
         echo "[Update]: modify to a valid link to the git repo"
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
+        exit
 
 
-    elif [ "$2" = "run" ]
+    if [ -z "$2" ]
     then
+        echo "no directory to run"
+        exit
+    fi
 
-        if [ -z "$3" ]
-        then
-            echo "no directory to run"
-            exit
+    files=("append.clj" "client.clj" "core.clj" "db.clj" "nemesis.clj")
+    for file in "${files[@]}"
+    do
+        if test -f "elle/$2/$file"; then
+            echo "copied elle/$2/$file"
+            cp elle/$2/$file  /jepsen/redis/src/jepsen/redis/
         fi
+    done
 
-        files=("append.clj" "client.clj" "core.clj" "db.clj" "nemesis.clj")
-        for file in "${files[@]}"
-        do
-            if test -f "elle/$3/$file"; then
-                echo "copied elle/$3/$file"
-                cp elle/$3/$file  /jepsen/redis/src/jepsen/redis/
-            fi
-        done
-
-        # uses redis repository
-        cd /jepsen/redis
-        lein install
-        lein run test-all
+    # uses redis repository
+    cd /jepsen/redis
+    lein install
+    lein run test-all
 
     fi
 
