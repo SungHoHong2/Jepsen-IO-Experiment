@@ -27,8 +27,6 @@
 
 
     ; G1a: Aborted Read: T2 sees T1's failed write
-
-
     (def G1a [
               ; transaction 1
               {:type :fail, :value [[:append :x 1]]}
