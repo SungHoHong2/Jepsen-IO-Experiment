@@ -1,8 +1,0 @@
-G1c #0
-Let:
-  T1 = {:type :ok, :value [[:append :x 2] [:append :y 1]]}
-  T2 = {:type :ok, :value [[:append :x 1] [:r :y [1]]]}
-
-Then:
-  - T1 < T2, because T2 observed T1's append of 1 to key :y.
-  - However, T2 < T1, because T1 appended 2 after T2 appended 1 to :x: a contradiction!

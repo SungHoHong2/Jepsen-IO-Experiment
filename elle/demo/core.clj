@@ -8,12 +8,6 @@
   [& args]
 
     ; G0: A write cycle == (P0) Dirty Write
-    ;
-    ; T1: W(x1)                   W(y1) c
-    ; T2:       W(x2)   W(y2) c
-    ; -----------------------------------
-    ; T3: R(x1)(y2)  R(x2)(y1)
-
     (def G0 [
               ; transaction 1
               {:type :ok, :value [[:append :x 1] [:append :y 1]]}
@@ -37,8 +31,7 @@
 
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1a))
 
-
-    ; G1b: Intermediate Reads, T2 sees T1's intermediate write
+    ; G1b: Intermediate Reads, T2 sees T1's intermediate write = Fuzzy Read
     (def G1b [
               ; transaction 1
               {:type :ok, :value [[:append :x 1] [:append :x 2]]}
@@ -63,23 +56,25 @@
 
     ; G2: Anti-dependency Cycles
     (def G2 [
-               ; transaction 1
+               ; transaction 1: read y before y was updated by T2
                {:type :ok, :value [[:append :x 1] [:r :y]]}
-               ; transaction 2
+               ; transaction 2: read x before x was updated by T1
                {:type :ok, :value [[:append :y 1] [:r :x]]}
                ])
 
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G2))
 
 
-  ; Dirty Read
+    (def LostUpdate [
+    ; transaction 1
+               {:type :ok, :value [[:append :x 1] [:r :y [1]]]}
+               ; transaction 2
+               {:type :ok, :value [[:append :x 2] [:r :y [2]]]}
+               ; transaction 3: T1 update is lost
+               {:type :ok, :value [[:r :x [2]]]}
+               ])
 
-  ; Dirty Write
-
-  ; Fuzzy Read
-
-  ; Lost Update
-
+    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1c))
 
 
 
