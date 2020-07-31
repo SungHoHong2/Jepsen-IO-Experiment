@@ -31,7 +31,7 @@
 
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1a))
 
-    ; G1b: Intermediate Reads, T2 sees T1's intermediate write = Fuzzy Read
+    ; G1b: Intermediate Reads, T2 sees T1's intermediate write
     (def G1b [
               ; transaction 1
               {:type :ok, :value [[:append :x 1] [:append :x 2]]}
@@ -64,7 +64,7 @@
 
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G2))
 
-    (println "Lostupdate!")
+
     (def LostUpdate [
                ; transaction 1
                {:type :ok, :value [[:append :x 1]]}
@@ -73,8 +73,16 @@
                ; transaction 3: T1 update is lost
                {:type :ok, :value [[:r :x [2]]]}
                ])
+    (pprint (a/check {:consistency-models [:serializable], :directory "out"} LostUpdate))
 
-    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1c))
+
+;    (def DirtyRead [
+;                      ; transaction 1
+;                      {:type :ok, :value [[:r :x [1]] [:append :x 2] [:r :y [1]] [:append :y 2] ]}
+;
+;                   ])
+;    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1c))
+
 
 
 
