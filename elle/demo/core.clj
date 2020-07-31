@@ -23,7 +23,7 @@
                       {:type :ok, :value [[:r :x [1 2]] [:r :y [2 1]]]}
                      ]
 
-
+                     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G0))
 
 
                     )
@@ -40,8 +40,8 @@
 ;              {:type :ok, :value [[:r :x [1 2]] [:r :y [2 1]]]}
 ;            ])
 
-    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G0))
-;
+;    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G0))
+
 ;    ; G1a: Aborted Read, T2 sees T1's failed write
 ;    (def G1a [
 ;              ; transaction 1
