@@ -66,10 +66,10 @@
 
 
     (def LostUpdate [
-    ; transaction 1
-               {:type :ok, :value [[:append :x 1] [:r :y [1]]]}
+               ; transaction 1
+               {:type :ok, :value [[:append :x 1]]}
                ; transaction 2
-               {:type :ok, :value [[:append :x 2] [:r :y [2]]]}
+               {:type :ok, :value [[:append :x 2]]}
                ; transaction 3: T1 update is lost
                {:type :ok, :value [[:r :x [2]]]}
                ])
