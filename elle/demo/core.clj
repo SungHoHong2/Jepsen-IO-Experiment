@@ -12,7 +12,8 @@
             (System/exit 0) )
        )
 
-      (println (first(args)))
+      (println (type args))
+;      (println (first(args)))
 
 
 
