@@ -16,6 +16,10 @@
       (println (first (list 1 2,3)))
       (println (first args))
 
+      (let [mystr (first args)]
+        (case mystr
+              "" 0
+              "howdy! hello" (count mystr)))
 
 
 ;    ; G0: A write cycle == (P0) Dirty Write
