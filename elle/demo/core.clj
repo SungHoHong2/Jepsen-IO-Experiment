@@ -68,11 +68,11 @@
     (println "LostUpdate")
     (def LostUpdate [
                ; transaction 1
-               {:type :ok, :value [[:append :x 1]]}
+               {:type :ok, :value [[:append :x 1] [:r :x [1]]]}
                ; transaction 2
-               {:type :ok, :value [[:append :x 2]]}
+               {:type :ok, :value [[:append :x 2] [:r :x [1 2]]]}
                ; transaction 3: T1 update is lost
-               {:type :ok, :value [[:r :x [2]]]}
+               {:type :ok, :value [[:r :x [2]]]} ; should expect [1,2] or [2,1]
                ])
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} LostUpdate))
 
