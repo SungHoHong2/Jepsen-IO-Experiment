@@ -7,6 +7,7 @@
 (defn -main
   [& args]
 
+      (println "hello?")
       (if (empty? args)
           (println "No arguements")
           (System/exit 0))
