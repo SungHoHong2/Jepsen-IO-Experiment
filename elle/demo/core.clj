@@ -14,7 +14,7 @@
 
       (let [testcase (first args)]
         (case testcase
-              "G0" 0
+              "" 0
               "shark" (println "FRISK" (count mystr))))
 
 
