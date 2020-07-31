@@ -13,11 +13,11 @@
        )
 
       (println (type args))
-      (println args)
+      (println args 0)
 
 
 
-  ;    ; G0: A write cycle == (P0) Dirty Write
+;    ; G0: A write cycle == (P0) Dirty Write
 ;    (def G0 [
 ;              ; transaction 1
 ;              {:type :ok, :value [[:append :x 1] [:append :y 1]]} ; x[1] y[1]
@@ -28,16 +28,6 @@
 ;            ])
 ;
 ;    (pprint (a/check {:consistency-models [:serializable], :directory "out"} G0))
-;
-;    ; P1: Dirty Read
-;    (def P1 [
-;              ; transaction 1
-;              {:type :ok, :value [[:r :x] [:append :x 1] [:r :y] [:append :y 1]]} ; x[1] y[1]
-;              ; transaction 2
-;              {:type :ok, :value [[:r :x ] [:r :y ]]}
-;              ])
-;
-;    (pprint (a/check {:consistency-models [:serializable], :directory "out"} P1))
 ;
 ;    ; G1a: Aborted Read, T2 sees T1's failed write
 ;    (def G1a [
@@ -92,9 +82,6 @@
 ;               ])
 ;    (pprint (a/check {:consistency-models [:serializable], :directory "out"} LostUpdate))
 ;
-;
-
-
 
 
   )
