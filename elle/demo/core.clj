@@ -15,7 +15,7 @@
       (let [testcase (first args)]
         (case testcase
               "" 0
-              "shark" (println "FRISK" (count mystr))))
+              "shark" (println "FRISK" (count testcase))))
 
 
 ;    ; G0: A write cycle == (P0) Dirty Write
