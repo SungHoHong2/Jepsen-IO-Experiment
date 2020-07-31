@@ -87,7 +87,7 @@ then
 
     if [ -z "$3" ]
     then
-        echo "no command line"
+        echo "no command line (test-all) for redis"
         exit
     fi
 
