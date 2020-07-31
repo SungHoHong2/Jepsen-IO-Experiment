@@ -15,8 +15,7 @@
       (doseq [arg args]
         (println arg))
 
-      (println "yes arguements")
-
+      (println "yes arguements" (first(args)))
 
 ;    ; G0: A write cycle == (P0) Dirty Write
 ;    (def G0 [
