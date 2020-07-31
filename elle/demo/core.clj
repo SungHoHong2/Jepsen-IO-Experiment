@@ -11,7 +11,7 @@
 
       (if (empty? args)
           (println "No arguements")
-          ; (System/exit 0)
+          (System/exit 0)
        )
 
       (doseq [arg args]
