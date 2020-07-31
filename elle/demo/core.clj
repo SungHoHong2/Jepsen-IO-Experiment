@@ -13,7 +13,8 @@
        )
 
       (println (type args))
-      (println (args[0]))
+      (println (first (list 1 2,3)))
+      (println (first (args)))
 
 
 
