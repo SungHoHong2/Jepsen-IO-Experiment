@@ -14,7 +14,7 @@
 
       (println (type args))
       (println (first (list 1 2,3)))
-      (println (first (args)))
+      (println (first args))
 
 
 
