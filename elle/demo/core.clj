@@ -65,6 +65,7 @@
     (pprint (a/check {:consistency-models [:serializable], :directory "out"} G2))
 
 
+    (println "LostUpdate")
     (def LostUpdate [
                ; transaction 1
                {:type :ok, :value [[:append :x 1]]}
