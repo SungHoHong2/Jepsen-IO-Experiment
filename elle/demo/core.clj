@@ -12,12 +12,11 @@
             (System/exit 0) )
        )
 
-      (doseq [arg args]
-        (println arg))
+      (println (first(args)))
 
-      (println "yes arguements" (first(args)))
 
-;    ; G0: A write cycle == (P0) Dirty Write
+
+  ;    ; G0: A write cycle == (P0) Dirty Write
 ;    (def G0 [
 ;              ; transaction 1
 ;              {:type :ok, :value [[:append :x 1] [:append :y 1]]} ; x[1] y[1]
