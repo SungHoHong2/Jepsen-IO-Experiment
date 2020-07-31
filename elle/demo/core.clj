@@ -13,7 +13,7 @@
        )
 
       (println (type args))
-      (println args 0)
+      (println (args 0))
 
 
 
