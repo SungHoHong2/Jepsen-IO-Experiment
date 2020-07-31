@@ -85,6 +85,12 @@ then
         exit
     fi
 
+    if [ -z "$3" ]
+    then
+        echo "no command line"
+        exit
+    fi
+
     if [ "$2" = "outside_docker" ]
     then
         echo "outside the container"
@@ -115,8 +121,7 @@ then
     # uses redis repository
     cd /jepsen/redis
     lein install
-    lein run test-all
-
+    lein run $3 # test-all
 
 else
   echo "no argument"
