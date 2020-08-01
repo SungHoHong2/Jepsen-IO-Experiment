@@ -123,8 +123,11 @@ then
     lein install
     lein run $3 # test-all
 
+elif [ "$1" = "demo" ]
+then
+    cd /jepsen/redis
+    lein run $2 # test-all
 else
-  echo "redis demo"
-  cd /jepsen/redis
-  lein run $1
+  echo "no argument straight to d"
+
 fi
