@@ -124,6 +124,7 @@ then
     lein run $3 # test-all
 
 else
-  echo "no argument"
-
+  echo "redis demo"
+  cd /jepsen/redis
+  lein run $1
 fi
