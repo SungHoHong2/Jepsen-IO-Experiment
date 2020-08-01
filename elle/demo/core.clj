@@ -15,8 +15,8 @@
       (let [testcase (first args)]
         (case testcase
               "test" (println "test>?")
-              "G0" (println "FRISK" (count testcase)
-
+              "G0" (
+                      (println "FRISK" (count testcase))
                       (def G0 [
                         ; transaction 1
                         {:type :ok, :value [[:append :x 1] [:append :y 1]]} ; x[1] y[1]
