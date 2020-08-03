@@ -85,11 +85,6 @@ then
         exit
     fi
 
-    if [ -z "$3" ]
-    then
-        echo "no command line (test-all) for redis"
-        exit
-    fi
 
     if [ "$2" = "outside_docker" ]
     then
@@ -106,6 +101,12 @@ then
         echo "commit 6c857fb16f7977cff21756acc99eb302cfdd11bd, branch: master, Date: Tue Jun 23 10:17:12 2020 -0400"
         echo "[Update]: modify to a valid link to the git repo"
         cp elle/update/jepsen/db.clj /jepsen/redis/src/jepsen/redis/
+        exit
+    fi
+
+    if [ -z "$3" ]
+    then
+        echo "no command line (test-all) for redis"
         exit
     fi
 
