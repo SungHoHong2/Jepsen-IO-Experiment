@@ -74,5 +74,4 @@
         "G1c" (pprint (a/check {:consistency-models [:serializable], :directory "out"} G1c))
         "G2" (pprint (a/check {:consistency-models [:serializable], :directory "out"} G2))
         "LostUpdate" (pprint (a/check {:consistency-models [:serializable], :directory "out"} LostUpdate))))
-
   )
