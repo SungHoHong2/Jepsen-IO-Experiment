@@ -91,7 +91,7 @@
                     :max-txn-length     (:max-txn-length opts 4)
                     :max-writes-per-key (:max-writes-per-key opts 128)
                     ; may add directories ...
-                    :consistency-models [:strict-serializable], :directory "out"})
+                    :consistency-models [:strict-serializable]})
       (assoc :client (Client. nil))
 ;      (update :checker #(checker/compose {:workload %
 ;                                          :timeline (timeline/html)}))
