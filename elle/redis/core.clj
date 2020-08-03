@@ -176,7 +176,6 @@
   combining all workloads and nemeses."
   [opts]
 
-
   (let [nemeses     (if-let [n (:nemesis opts)]  [n] standard-nemeses)
         workloads   (if-let [w (:workload opts)] [w] standard-workloads)
         counts      (range (:test-count opts))]
