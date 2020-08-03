@@ -50,42 +50,42 @@
 
   (println "[FRISK]" opts)
 
-;  (let [workload-name (:workload opts)
-;        workload      ((workloads workload-name) opts)
-;        db            (db/sharded-db opts)
-;        nemesis       (nemesis/nemesis-package
-;                        {:db        db
-;                         :nodes     (:nodes opts)
-;                         :faults    (:nemesis opts)
-;                         :partition {:targets [:primaries]}
-;                         :pause     {:targets [nil :one :primaries :majority :all]}
-;                         :kill      {:targets [nil :one :primaries :majority :all]}
-;                         :interval  (:nemesis-interval opts)})]
-;    (merge tests/noop-test
-;           opts
-;           {:name (str "mongodb " (name workload-name)
-;                       (when-let [w (:write-concern opts)] (str " w:" w))
-;                       (when-let [r (:read-concern opts)] (str " r:" r))
-;                       (when-let [w (:txn-write-concern opts)] (str " tw:" w))
-;                       (when-let [r (:txn-read-concern opts)] (str " tr:" r))
-;                       (when (:singleton-txns opts) " singleton-txns")
-;                       " " (str/join "," (map name (:nemesis opts))))
-;            :os   debian/os
-;            :db   db
-;            :checker (checker/compose
-;                       {:perf       (checker/perf
-;                                      {:nemeses (:perf nemesis)})
-;                        :clock      (checker/clock-plot)
-;                        :stats      (checker/stats)
-;                        :exceptions (checker/unhandled-exceptions)
-;                        :workload   (:checker workload)})
-;            :client    (:client workload)
-;            :nemesis   (:nemesis nemesis)
-;            :generator (gen/phases
-;                         (->> (:generator workload)
-;                              (gen/stagger (/ (:rate opts)))
-;                              (gen/nemesis (:generator nemesis))
-;                              (gen/time-limit (:time-limit opts))))}))
+  (let [workload-name (:workload opts)
+        workload      ((workloads workload-name) opts)
+        db            (db/sharded-db opts)
+        nemesis       (nemesis/nemesis-package
+                        {:db        db
+                         :nodes     (:nodes opts)
+                         :faults    (:nemesis opts)
+                         :partition {:targets [:primaries]}
+                         :pause     {:targets [nil :one :primaries :majority :all]}
+                         :kill      {:targets [nil :one :primaries :majority :all]}
+                         :interval  (:nemesis-interval opts)})]
+    (merge tests/noop-test
+           opts
+           {:name (str "mongodb " (name workload-name)
+                       (when-let [w (:write-concern opts)] (str " w:" w))
+                       (when-let [r (:read-concern opts)] (str " r:" r))
+                       (when-let [w (:txn-write-concern opts)] (str " tw:" w))
+                       (when-let [r (:txn-read-concern opts)] (str " tr:" r))
+                       (when (:singleton-txns opts) " singleton-txns")
+                       " " (str/join "," (map name (:nemesis opts))))
+            :os   debian/os
+            :db   db
+            :checker (checker/compose
+                       {:perf       (checker/perf
+                                      {:nemeses (:perf nemesis)})
+                        :clock      (checker/clock-plot)
+                        :stats      (checker/stats)
+                        :exceptions (checker/unhandled-exceptions)
+                        :workload   (:checker workload)})
+            :client    (:client workload)
+            :nemesis   (:nemesis nemesis)
+            :generator (gen/phases
+                         (->> (:generator workload)
+                              (gen/stagger (/ (:rate opts)))
+                              (gen/nemesis (:generator nemesis))
+                              (gen/time-limit (:time-limit opts))))}))
 
   )
 
