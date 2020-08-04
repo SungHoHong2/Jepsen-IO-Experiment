@@ -1,0 +1,6 @@
+2020-08-03 23:04:18 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+31348:C 03 Aug 2020 23:04:18.716 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+31348:C 03 Aug 2020 23:04:18.716 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=31348, just started
+31348:C 03 Aug 2020 23:04:18.716 # Configuration loaded
+31348:M 03 Aug 2020 23:04:18.717 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+31348:M 03 Aug 2020 23:04:18.717 # Could not create server TCP listening socket 0.0.0.0:6379: bind: Address already in use

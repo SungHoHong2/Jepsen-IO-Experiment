@@ -1,0 +1,28 @@
+2020-08-04 00:50:03 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+25002:C 04 Aug 2020 00:50:03.657 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+25002:C 04 Aug 2020 00:50:03.657 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=25002, just started
+25002:C 04 Aug 2020 00:50:03.657 # Configuration loaded
+25002:M 04 Aug 2020 00:50:03.658 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+25002:M 04 Aug 2020 00:50:03.659 * Running mode=standalone, port=6379.
+25002:M 04 Aug 2020 00:50:03.659 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+25002:M 04 Aug 2020 00:50:03.659 # Server initialized
+25002:M 04 Aug 2020 00:50:03.659 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+25002:M 04 Aug 2020 00:50:03.659 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+25002:M 04 Aug 2020 00:50:03.660 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+25002:M 04 Aug 2020 00:50:03.661 * Ready to accept connections
+25002:04 Aug 00:50:05.713 Joined Raft cluster, node id: 2133041760, dbid: 8c333ac967f0db2fbeab36596e6232f4
+25002:04 Aug 00:50:05.979 State change: Node is now a follower, term 1
+25002:04 Aug 00:50:05.979 Cluster Membership: term:1 index:0 nodes: id=2133041760,voting=0,active=1,addr=-
+25002:04 Aug 00:50:40.086 State change: Election starting, node is now a candidate, term 1
+25002:04 Aug 00:50:40.086 Cluster Membership: term:1 index:125 nodes: id=2133041760,voting=1,active=1,addr=- id=640111518,voting=1,active=1,addr=172.19.0.4:6379 id=1931091722,voting=1,active=1,addr=172.19.0.8:6379 id=633607596,voting=1,active=1,addr=172.19.0.7:6379
+25002:04 Aug 00:50:40.228 State change: Node is now a leader, term 2
+25002:04 Aug 00:50:40.228 Cluster Membership: term:2 index:125 nodes: id=2133041760,voting=1,active=1,addr=- id=640111518,voting=1,active=1,addr=172.19.0.4:6379 id=1931091722,voting=1,active=1,addr=172.19.0.8:6379 id=633607596,voting=1,active=1,addr=172.19.0.7:6379
+25002:04 Aug 00:50:41.195 {node:640111518} RAFT.REQUESTVOTE failed: connection dropped.
+25002:04 Aug 00:50:45.664 State change: Node is now a follower, term 3
+25002:04 Aug 00:50:45.664 Cluster Membership: term:3 index:134 nodes: id=2133041760,voting=1,active=1,addr=- id=640111518,voting=1,active=1,addr=172.19.0.4:6379 id=1931091722,voting=1,active=1,addr=172.19.0.8:6379 id=633607596,voting=1,active=1,addr=172.19.0.7:6379
+25002:04 Aug 00:50:46.057 State change: Node is now a follower, term 4
+25002:04 Aug 00:50:46.057 Cluster Membership: term:4 index:134 nodes: id=2133041760,voting=1,active=1,addr=- id=640111518,voting=1,active=1,addr=172.19.0.4:6379 id=1931091722,voting=1,active=1,addr=172.19.0.8:6379 id=633607596,voting=1,active=1,addr=172.19.0.7:6379
+25002:04 Aug 00:50:47.208 State change: Election starting, node is now a candidate, term 4
+25002:04 Aug 00:50:47.208 Cluster Membership: term:4 index:134 nodes: id=2133041760,voting=1,active=1,addr=- id=640111518,voting=1,active=1,addr=172.19.0.4:6379 id=1931091722,voting=1,active=1,addr=172.19.0.8:6379 id=633607596,voting=1,active=1,addr=172.19.0.7:6379
+25002:04 Aug 00:50:47.357 State change: Node is now a leader, term 5
+25002:04 Aug 00:50:47.357 Cluster Membership: term:5 index:134 nodes: id=2133041760,voting=1,active=1,addr=- id=640111518,voting=1,active=1,addr=172.19.0.4:6379 id=1931091722,voting=1,active=1,addr=172.19.0.8:6379 id=633607596,voting=1,active=1,addr=172.19.0.7:6379

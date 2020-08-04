@@ -1,0 +1,374 @@
+2020-08-04 00:47:24 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+23987:C 04 Aug 2020 00:47:24.150 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+23987:C 04 Aug 2020 00:47:24.150 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=23987, just started
+23987:C 04 Aug 2020 00:47:24.150 # Configuration loaded
+23987:M 04 Aug 2020 00:47:24.151 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+23987:M 04 Aug 2020 00:47:24.152 * Running mode=standalone, port=6379.
+23987:M 04 Aug 2020 00:47:24.152 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+23987:M 04 Aug 2020 00:47:24.152 # Server initialized
+23987:M 04 Aug 2020 00:47:24.152 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+23987:M 04 Aug 2020 00:47:24.152 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+23987:M 04 Aug 2020 00:47:24.153 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+23987:M 04 Aug 2020 00:47:24.154 * Ready to accept connections
+23987:04 Aug 00:47:25.624 Joined Raft cluster, node id: 1374221001, dbid: bb65cc632d129a1e9e12f0aace682b5b
+23987:04 Aug 00:47:25.916 State change: Node is now a follower, term 1
+23987:04 Aug 00:47:25.916 Cluster Membership: term:1 index:0 nodes: id=1374221001,voting=0,active=1,addr=-
+23987:04 Aug 00:47:32.122 State change: Election starting, node is now a candidate, term 1
+23987:04 Aug 00:47:32.122 Cluster Membership: term:1 index:27 nodes: id=1374221001,voting=1,active=1,addr=- id=1004944532,voting=1,active=1,addr=172.19.0.4:6379 id=1765497231,voting=1,active=1,addr=172.19.0.9:6379 id=1223588425,voting=1,active=1,addr=172.19.0.3:6379 id=267294088,voting=1,active=1,addr=172.19.0.8:6379
+23987:04 Aug 00:47:33.247 {node:1004944532} RAFT.REQUESTVOTE failed: connection dropped.
+23987:04 Aug 00:47:34.047 State change: Election starting, node is now a candidate, term 2
+23987:04 Aug 00:47:34.047 Cluster Membership: term:2 index:27 nodes: id=1374221001,voting=1,active=1,addr=- id=1004944532,voting=1,active=1,addr=172.19.0.4:6379 id=1765497231,voting=1,active=1,addr=172.19.0.9:6379 id=1223588425,voting=1,active=1,addr=172.19.0.3:6379 id=267294088,voting=1,active=1,addr=172.19.0.8:6379
+23987:04 Aug 00:47:34.205 State change: Node is now a leader, term 3
+23987:04 Aug 00:47:34.205 Cluster Membership: term:3 index:27 nodes: id=1374221001,voting=1,active=1,addr=- id=1004944532,voting=1,active=1,addr=172.19.0.4:6379 id=1765497231,voting=1,active=1,addr=172.19.0.9:6379 id=1223588425,voting=1,active=1,addr=172.19.0.3:6379 id=267294088,voting=1,active=1,addr=172.19.0.8:6379
+23987:04 Aug 00:48:10.811 Raft log file size is 32062, initiating snapshot.
+23987:04 Aug 00:48:10.811 Initiating snapshot.
+23987:04 Aug 00:48:10.811 Snapshot scope: first_entry_idx=215, current_idx=215
+24125:C 04 Aug 2020 00:48:10.910 * DB saved on disk
+24125:C 04 Aug 2020 00:48:10.911 * Module fork: 0 MB of memory used by copy-on-write
+23987:M 04 Aug 2020 00:48:10.954 * Module fork exited pid: 24125, retcode: 0, bysignal: 0
+23987:04 Aug 00:48:11.010 Snapshot created successfuly.
+23987:04 Aug 00:48:11.011 Snapshot operation completed successfuly.
+23987:04 Aug 00:48:11.095 Log rewrite complete, 1 entries rewritten (from idx 215).
+23987:04 Aug 00:48:11.095 {node:1004944532} not sending snapshot, snapshot_in_progress
+23987:04 Aug 00:48:11.095 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:11.095 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:11.211 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:11.211 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:11.428 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:11.428 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:11.628 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:11.628 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:11.846 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:11.846 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:12.046 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:12.046 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:12.246 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:12.246 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:12.447 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:12.447 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:12.647 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:12.647 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:12.848 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:12.848 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:13.048 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:13.048 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:13.248 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:13.248 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:13.448 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:13.448 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:13.730 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:13.730 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:13.930 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:13.930 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:14.131 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:14.131 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:14.331 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:14.331 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:14.564 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:14.564 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:14.764 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:14.764 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:14.964 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:14.964 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:15.164 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:15.164 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:15.390 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:15.390 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:15.590 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:15.590 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:15.798 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:15.798 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:15.998 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:15.998 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:16.198 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:16.198 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:16.433 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:16.433 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:16.634 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:16.634 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:16.850 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:16.850 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:17.050 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:17.050 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:17.350 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:17.350 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:17.567 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:17.567 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:17.719 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:17.719 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:17.876 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:17.876 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:18.077 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:18.077 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:18.285 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:18.285 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:18.485 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:18.485 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:18.686 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:18.686 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:18.910 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:18.910 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:19.111 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:19.111 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:19.311 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:19.311 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:19.511 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:19.511 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:19.712 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:19.712 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:19.734 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:19.734 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:19.913 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:19.913 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:20.114 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:20.114 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:20.328 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:20.328 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:20.553 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:20.553 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:20.612 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:20.612 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:20.753 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:20.753 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:20.953 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:20.953 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:21.153 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:21.153 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:21.387 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:21.387 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:21.442 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:21.442 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:21.587 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:21.587 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:21.787 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:21.787 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:21.987 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:21.988 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:22.188 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:22.188 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:22.207 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:22.207 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:22.455 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:22.455 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:22.671 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:22.671 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:22.871 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:22.871 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:23.032 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:23.032 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:23.172 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:23.172 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:23.372 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:23.372 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:23.622 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:23.622 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:23.822 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:23.822 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:24.022 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:24.023 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:24.223 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:24.223 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:24.423 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:24.423 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:24.623 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:24.623 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:24.823 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:24.823 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:25.023 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:25.023 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:25.223 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:25.223 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:25.424 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:25.424 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:25.624 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:25.624 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:25.825 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:25.825 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:26.025 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:26.025 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:26.225 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:26.225 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:26.426 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:26.426 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:26.626 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:26.626 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:26.826 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:26.826 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:27.041 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:27.041 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:27.241 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:27.241 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:27.442 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:27.442 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:27.642 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:27.642 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:27.842 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:27.842 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:28.043 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:28.043 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:28.243 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:28.243 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:28.443 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:28.443 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:28.644 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:28.644 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:28.844 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:28.844 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:29.044 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:29.044 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:29.245 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:29.245 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:29.445 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:29.445 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:29.645 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:29.645 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:29.846 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:29.846 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:30.046 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:30.046 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:30.246 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:30.246 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:30.447 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:30.447 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:30.647 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:30.648 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:30.848 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:30.848 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:31.048 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:31.048 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:31.249 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:31.249 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:31.449 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:31.449 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:31.649 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:31.649 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:31.850 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:31.850 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:32.050 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:32.050 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:32.250 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:32.250 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:32.451 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:32.451 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:32.651 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:32.651 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:32.851 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:32.851 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:33.051 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:33.052 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:33.252 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:33.252 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:33.452 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:33.452 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:33.653 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:33.653 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:33.853 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:33.853 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:34.054 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:34.054 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:34.254 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:34.254 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:34.454 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:34.454 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:34.655 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:34.655 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:34.855 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:34.855 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:35.056 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:35.056 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:35.256 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:35.256 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:35.456 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:35.456 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:35.657 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:35.657 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:35.857 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:35.857 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:36.058 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:36.058 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:36.258 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:36.258 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:36.458 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:36.458 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:36.659 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:36.659 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:36.859 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:36.859 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:37.059 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:37.059 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:37.260 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:37.260 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:37.460 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:37.460 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:37.660 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:37.660 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:37.861 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:37.861 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:38.061 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:38.061 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:38.262 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:38.262 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:38.462 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:38.462 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:38.662 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:38.662 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:38.863 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:38.863 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:39.063 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:39.063 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:39.263 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:39.263 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:39.463 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:39.463 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:39.664 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:39.664 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:39.864 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:39.864 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:40.064 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:40.064 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:40.265 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:40.265 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:40.466 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:40.466 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:40.666 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:40.666 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:40.866 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:40.866 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:41.067 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:41.067 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:41.267 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:41.267 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:41.467 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:41.467 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:41.668 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:41.668 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:41.868 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:41.868 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:42.068 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:42.069 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:42.269 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:42.269 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:42.469 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:42.469 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:42.669 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:42.669 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:42.870 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:42.870 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:43.070 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:43.070 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:43.270 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:43.270 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:43.471 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:43.471 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:43.671 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:43.671 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:43.871 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:43.871 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:44.072 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:44.072 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:44.272 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:44.272 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:44.472 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:44.472 {node:1004944532} not connected, state=2
+23987:04 Aug 00:48:44.673 {node:1004944532} raftSendSnapshot: snapshot_last_idx 215 term 3, node next_idx 28
+23987:04 Aug 00:48:44.673 {node:1004944532} not connected, state=2

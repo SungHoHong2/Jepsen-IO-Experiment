@@ -1,0 +1,75 @@
+2020-08-04 00:46:09 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+23529:C 04 Aug 2020 00:46:09.347 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+23529:C 04 Aug 2020 00:46:09.347 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=23529, just started
+23529:C 04 Aug 2020 00:46:09.347 # Configuration loaded
+23529:M 04 Aug 2020 00:46:09.348 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+23529:M 04 Aug 2020 00:46:09.348 * Running mode=standalone, port=6379.
+23529:M 04 Aug 2020 00:46:09.348 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+23529:M 04 Aug 2020 00:46:09.348 # Server initialized
+23529:M 04 Aug 2020 00:46:09.348 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+23529:M 04 Aug 2020 00:46:09.349 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+23529:M 04 Aug 2020 00:46:09.349 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+23529:M 04 Aug 2020 00:46:09.350 * Ready to accept connections
+23529:04 Aug 00:46:10.828 Joined Raft cluster, node id: 1476934906, dbid: 47a63942e503b0eee40da3e55fa2cf02
+23529:04 Aug 00:46:11.087 State change: Node is now a follower, term 1
+23529:04 Aug 00:46:11.087 Cluster Membership: term:1 index:0 nodes: id=1476934906,voting=0,active=1,addr=-
+23529:04 Aug 00:46:17.931 State change: Node is now a follower, term 2
+23529:04 Aug 00:46:17.932 Cluster Membership: term:2 index:25 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:19.000 State change: Node is now a follower, term 3
+23529:04 Aug 00:46:19.000 Cluster Membership: term:3 index:25 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:20.827 State change: Node is now a follower, term 4
+23529:04 Aug 00:46:20.827 Cluster Membership: term:4 index:25 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:22.027 State change: Node is now a follower, term 5
+23529:04 Aug 00:46:22.027 Cluster Membership: term:5 index:25 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:23.169 State change: Node is now a follower, term 6
+23529:04 Aug 00:46:23.169 Cluster Membership: term:6 index:25 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:30.153 State change: Node is now a follower, term 7
+23529:04 Aug 00:46:30.153 Cluster Membership: term:7 index:76 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:36.384 State change: Election starting, node is now a candidate, term 7
+23529:04 Aug 00:46:36.384 Cluster Membership: term:7 index:101 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:36.485 State change: Node is now a leader, term 8
+23529:04 Aug 00:46:36.485 Cluster Membership: term:8 index:101 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:37.486 {node:1892905455} RAFT.REQUESTVOTE failed: connection dropped.
+23529:04 Aug 00:46:37.486 {node:515065681} RAFT.REQUESTVOTE failed: connection dropped.
+23529:04 Aug 00:46:45.302 State change: Node is now a follower, term 9
+23529:04 Aug 00:46:45.302 Cluster Membership: term:9 index:129 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:49.439 State change: Node is now a follower, term 10
+23529:04 Aug 00:46:49.439 Cluster Membership: term:10 index:153 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:55.780 State change: Election starting, node is now a candidate, term 10
+23529:04 Aug 00:46:55.780 Cluster Membership: term:10 index:176 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:56.881 {node:871222587} RAFT.REQUESTVOTE failed: connection dropped.
+23529:04 Aug 00:46:56.881 {node:515065681} RAFT.REQUESTVOTE failed: connection dropped.
+23529:04 Aug 00:46:56.881 {node:1368322290} RAFT.REQUESTVOTE failed: connection dropped.
+23529:04 Aug 00:46:56.981 State change: Election starting, node is now a candidate, term 11
+23529:04 Aug 00:46:56.981 Cluster Membership: term:11 index:176 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:46:58.883 State change: Election starting, node is now a candidate, term 12
+23529:04 Aug 00:46:58.883 Cluster Membership: term:12 index:176 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:00.017 State change: Node is now a follower, term 14
+23529:04 Aug 00:47:00.017 Cluster Membership: term:14 index:176 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:01.634 State change: Node is now a follower, term 15
+23529:04 Aug 00:47:01.634 Cluster Membership: term:15 index:176 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:05.549 Raft log file size is 32110, initiating snapshot.
+23529:04 Aug 00:47:05.549 Initiating snapshot.
+23529:04 Aug 00:47:05.549 Snapshot scope: first_entry_idx=220, current_idx=220
+23659:C 04 Aug 2020 00:47:05.574 * DB saved on disk
+23659:C 04 Aug 2020 00:47:05.576 * Module fork: 0 MB of memory used by copy-on-write
+23529:M 04 Aug 2020 00:47:05.584 * Module fork exited pid: 23659, retcode: 0, bysignal: 0
+23529:04 Aug 00:47:05.649 Snapshot created successfuly.
+23529:04 Aug 00:47:05.649 Snapshot operation completed successfuly.
+23529:04 Aug 00:47:05.700 Log rewrite complete, 0 entries rewritten (from idx 220).
+23529:04 Aug 00:47:07.227 State change: Node is now a follower, term 19
+23529:04 Aug 00:47:07.227 Cluster Membership: term:19 index:222 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:08.930 State change: Election starting, node is now a candidate, term 19
+23529:04 Aug 00:47:08.930 Cluster Membership: term:19 index:222 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:10.030 {node:871222587} RAFT.REQUESTVOTE failed: connection dropped.
+23529:04 Aug 00:47:10.030 {node:515065681} RAFT.REQUESTVOTE failed: connection dropped.
+23529:04 Aug 00:47:10.430 State change: Node is now a follower, term 21
+23529:04 Aug 00:47:10.430 Cluster Membership: term:21 index:222 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:11.556 State change: Node is now a follower, term 22
+23529:04 Aug 00:47:11.556 Cluster Membership: term:22 index:222 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:12.924 State change: Node is now a follower, term 23
+23529:04 Aug 00:47:12.924 Cluster Membership: term:23 index:222 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:14.262 State change: Election starting, node is now a candidate, term 23
+23529:04 Aug 00:47:14.262 Cluster Membership: term:23 index:222 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379
+23529:04 Aug 00:47:15.699 State change: Node is now a follower, term 25
+23529:04 Aug 00:47:15.699 Cluster Membership: term:25 index:222 nodes: id=1476934906,voting=1,active=1,addr=- id=1368322290,voting=1,active=1,addr=172.19.0.4:6379 id=515065681,voting=1,active=1,addr=172.19.0.3:6379 id=1892905455,voting=1,active=1,addr=172.19.0.9:6379 id=871222587,voting=1,active=1,addr=172.19.0.7:6379

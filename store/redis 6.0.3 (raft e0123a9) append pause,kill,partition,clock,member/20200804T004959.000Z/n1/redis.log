@@ -1,0 +1,15 @@
+2020-08-04 00:50:03 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+25325:C 04 Aug 2020 00:50:03.651 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+25325:C 04 Aug 2020 00:50:03.651 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=25325, just started
+25325:C 04 Aug 2020 00:50:03.651 # Configuration loaded
+25325:M 04 Aug 2020 00:50:03.652 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+25325:M 04 Aug 2020 00:50:03.653 * Running mode=standalone, port=6379.
+25325:M 04 Aug 2020 00:50:03.653 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+25325:M 04 Aug 2020 00:50:03.653 # Server initialized
+25325:M 04 Aug 2020 00:50:03.653 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+25325:M 04 Aug 2020 00:50:03.654 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+25325:M 04 Aug 2020 00:50:03.654 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+25325:M 04 Aug 2020 00:50:03.655 * Ready to accept connections
+25325:04 Aug 00:50:05.437 State change: Node is now a leader, term 0
+25325:04 Aug 00:50:05.437 Cluster Membership: term:0 index:0 nodes: id=640111518,voting=1,active=1,addr=-
+25325:04 Aug 00:50:05.504 Raft Cluster initialized, node id: 640111518, dbid: 8c333ac967f0db2fbeab36596e6232f4

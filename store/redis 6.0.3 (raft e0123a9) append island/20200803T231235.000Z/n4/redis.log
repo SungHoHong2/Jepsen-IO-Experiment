@@ -1,0 +1,28 @@
+2020-08-03 23:12:39 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+1995:C 03 Aug 2020 23:12:39.934 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1995:C 03 Aug 2020 23:12:39.934 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=1995, just started
+1995:C 03 Aug 2020 23:12:39.934 # Configuration loaded
+1995:M 03 Aug 2020 23:12:39.935 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1995:M 03 Aug 2020 23:12:39.936 * Running mode=standalone, port=6379.
+1995:M 03 Aug 2020 23:12:39.936 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+1995:M 03 Aug 2020 23:12:39.936 # Server initialized
+1995:M 03 Aug 2020 23:12:39.936 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1995:M 03 Aug 2020 23:12:39.937 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+1995:M 03 Aug 2020 23:12:39.937 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+1995:M 03 Aug 2020 23:12:39.938 * Ready to accept connections
+1995:03 Aug 23:12:41.915 Joined Raft cluster, node id: 1955424635, dbid: 0435731d27e53d24f22eeada3c178126
+1995:03 Aug 23:12:42.082 State change: Node is now a follower, term 1
+1995:03 Aug 23:12:42.082 Cluster Membership: term:1 index:0 nodes: id=1955424635,voting=0,active=1,addr=-
+1995:03 Aug 23:12:48.428 State change: Node is now a follower, term 2
+1995:03 Aug 23:12:48.428 Cluster Membership: term:2 index:22 nodes: id=1955424635,voting=1,active=1,addr=- id=754071250,voting=1,active=1,addr=172.19.0.3:6379 id=1814541373,voting=1,active=1,addr=172.19.0.4:6379 id=444492162,voting=1,active=1,addr=172.19.0.5:6379 id=473527995,voting=1,active=1,addr=172.19.0.7:6379
+1995:03 Aug 23:13:24.000 State change: Node is now a follower, term 3
+1995:03 Aug 23:13:24.000 Cluster Membership: term:3 index:199 nodes: id=1955424635,voting=1,active=1,addr=- id=754071250,voting=1,active=1,addr=172.19.0.3:6379 id=1814541373,voting=1,active=1,addr=172.19.0.4:6379 id=444492162,voting=1,active=1,addr=172.19.0.5:6379 id=473527995,voting=1,active=1,addr=172.19.0.7:6379
+1995:03 Aug 23:13:28.213 Raft log file size is 32112, initiating snapshot.
+1995:03 Aug 23:13:28.213 Initiating snapshot.
+1995:03 Aug 23:13:28.213 Snapshot scope: first_entry_idx=225, current_idx=226
+2133:C 03 Aug 2020 23:13:28.272 * DB saved on disk
+2133:C 03 Aug 2020 23:13:28.273 * Module fork: 1 MB of memory used by copy-on-write
+1995:03 Aug 23:13:28.314 Snapshot created successfuly.
+1995:03 Aug 23:13:28.314 Snapshot operation completed successfuly.
+1995:M 03 Aug 2020 23:13:28.354 * Module fork exited pid: 2133, retcode: 0, bysignal: 0
+1995:03 Aug 23:13:28.449 Log rewrite complete, 1 entries rewritten (from idx 225).

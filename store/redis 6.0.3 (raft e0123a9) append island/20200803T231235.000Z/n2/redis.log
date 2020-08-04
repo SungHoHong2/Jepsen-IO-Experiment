@@ -1,0 +1,20 @@
+2020-08-03 23:12:39 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+1978:C 03 Aug 2020 23:12:39.939 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1978:C 03 Aug 2020 23:12:39.939 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=1978, just started
+1978:C 03 Aug 2020 23:12:39.939 # Configuration loaded
+1978:M 03 Aug 2020 23:12:39.940 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1978:M 03 Aug 2020 23:12:39.941 * Running mode=standalone, port=6379.
+1978:M 03 Aug 2020 23:12:39.941 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+1978:M 03 Aug 2020 23:12:39.941 # Server initialized
+1978:M 03 Aug 2020 23:12:39.941 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1978:M 03 Aug 2020 23:12:39.941 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+1978:M 03 Aug 2020 23:12:39.942 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+1978:M 03 Aug 2020 23:12:39.942 * Ready to accept connections
+1978:03 Aug 23:12:41.815 Joined Raft cluster, node id: 1814541373, dbid: 0435731d27e53d24f22eeada3c178126
+1978:03 Aug 23:12:42.082 State change: Node is now a follower, term 1
+1978:03 Aug 23:12:42.082 Cluster Membership: term:1 index:0 nodes: id=1814541373,voting=0,active=1,addr=-
+1978:03 Aug 23:12:48.346 State change: Election starting, node is now a candidate, term 1
+1978:03 Aug 23:12:48.346 Cluster Membership: term:1 index:22 nodes: id=1814541373,voting=1,active=1,addr=- id=754071250,voting=1,active=1,addr=172.19.0.3:6379 id=444492162,voting=1,active=1,addr=172.19.0.5:6379 id=473527995,voting=1,active=1,addr=172.19.0.7:6379 id=1955424635,voting=1,active=1,addr=172.19.0.2:6379
+1978:03 Aug 23:12:48.453 State change: Node is now a leader, term 2
+1978:03 Aug 23:12:48.453 Cluster Membership: term:2 index:22 nodes: id=1814541373,voting=1,active=1,addr=- id=754071250,voting=1,active=1,addr=172.19.0.3:6379 id=444492162,voting=1,active=1,addr=172.19.0.5:6379 id=473527995,voting=1,active=1,addr=172.19.0.7:6379 id=1955424635,voting=1,active=1,addr=172.19.0.2:6379
+1978:03 Aug 23:12:49.421 {node:754071250} RAFT.REQUESTVOTE failed: connection dropped.

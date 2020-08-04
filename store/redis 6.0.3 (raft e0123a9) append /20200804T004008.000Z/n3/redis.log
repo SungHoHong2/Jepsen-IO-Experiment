@@ -1,0 +1,24 @@
+2020-08-04 00:42:11 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+22298:C 04 Aug 2020 00:42:11.208 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+22298:C 04 Aug 2020 00:42:11.208 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=22298, just started
+22298:C 04 Aug 2020 00:42:11.208 # Configuration loaded
+22298:M 04 Aug 2020 00:42:11.209 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+22298:M 04 Aug 2020 00:42:11.210 * Running mode=standalone, port=6379.
+22298:M 04 Aug 2020 00:42:11.210 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+22298:M 04 Aug 2020 00:42:11.210 # Server initialized
+22298:M 04 Aug 2020 00:42:11.210 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+22298:M 04 Aug 2020 00:42:11.210 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+22298:M 04 Aug 2020 00:42:11.211 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+22298:M 04 Aug 2020 00:42:11.211 * Ready to accept connections
+22298:04 Aug 00:42:15.864 Joined Raft cluster, node id: 86836975, dbid: baf1890dfb111bbd1453f6780e058a48
+22298:04 Aug 00:42:16.056 State change: Node is now a follower, term 1
+22298:04 Aug 00:42:16.056 Cluster Membership: term:1 index:0 nodes: id=86836975,voting=0,active=1,addr=-
+22298:04 Aug 00:43:04.343 Raft log file size is 32039, initiating snapshot.
+22298:04 Aug 00:43:04.343 Initiating snapshot.
+22298:04 Aug 00:43:04.343 Snapshot scope: first_entry_idx=225, current_idx=226
+22352:C 04 Aug 2020 00:43:04.402 * DB saved on disk
+22352:C 04 Aug 2020 00:43:04.404 * Module fork: 0 MB of memory used by copy-on-write
+22298:M 04 Aug 2020 00:43:04.432 * Module fork exited pid: 22352, retcode: 0, bysignal: 0
+22298:04 Aug 00:43:04.443 Snapshot created successfuly.
+22298:04 Aug 00:43:04.443 Snapshot operation completed successfuly.
+22298:04 Aug 00:43:04.571 Log rewrite complete, 1 entries rewritten (from idx 225).

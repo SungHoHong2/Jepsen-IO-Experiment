@@ -1,0 +1,34 @@
+2020-08-04 00:47:24 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+23992:C 04 Aug 2020 00:47:24.152 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+23992:C 04 Aug 2020 00:47:24.152 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=23992, just started
+23992:C 04 Aug 2020 00:47:24.152 # Configuration loaded
+23992:M 04 Aug 2020 00:47:24.153 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+23992:M 04 Aug 2020 00:47:24.154 * Running mode=standalone, port=6379.
+23992:M 04 Aug 2020 00:47:24.154 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+23992:M 04 Aug 2020 00:47:24.154 # Server initialized
+23992:M 04 Aug 2020 00:47:24.154 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+23992:M 04 Aug 2020 00:47:24.155 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+23992:M 04 Aug 2020 00:47:24.155 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+23992:M 04 Aug 2020 00:47:24.156 * Ready to accept connections
+23992:04 Aug 00:47:25.657 Joined Raft cluster, node id: 267294088, dbid: bb65cc632d129a1e9e12f0aace682b5b
+23992:04 Aug 00:47:25.916 State change: Node is now a follower, term 1
+23992:04 Aug 00:47:25.916 Cluster Membership: term:1 index:0 nodes: id=267294088,voting=0,active=1,addr=-
+23992:04 Aug 00:47:32.122 State change: Election starting, node is now a candidate, term 1
+23992:04 Aug 00:47:32.123 Cluster Membership: term:1 index:27 nodes: id=267294088,voting=1,active=1,addr=- id=1004944532,voting=1,active=1,addr=172.19.0.4:6379 id=1765497231,voting=1,active=1,addr=172.19.0.9:6379 id=1223588425,voting=1,active=1,addr=172.19.0.3:6379 id=1374221001,voting=1,active=1,addr=172.19.0.7:6379
+23992:04 Aug 00:47:33.346 {node:1004944532} RAFT.REQUESTVOTE failed: connection dropped.
+23992:04 Aug 00:47:34.163 State change: Node is now a follower, term 3
+23992:04 Aug 00:47:34.163 Cluster Membership: term:3 index:27 nodes: id=267294088,voting=1,active=1,addr=- id=1004944532,voting=1,active=1,addr=172.19.0.4:6379 id=1765497231,voting=1,active=1,addr=172.19.0.9:6379 id=1223588425,voting=1,active=1,addr=172.19.0.3:6379 id=1374221001,voting=1,active=1,addr=172.19.0.7:6379
+23992:04 Aug 00:48:10.801 Raft log file size is 32062, initiating snapshot.
+23992:04 Aug 00:48:10.801 Initiating snapshot.
+23992:04 Aug 00:48:10.801 Snapshot scope: first_entry_idx=214, current_idx=215
+24130:C 04 Aug 2020 00:48:10.835 * DB saved on disk
+24130:C 04 Aug 2020 00:48:10.836 * Module fork: 0 MB of memory used by copy-on-write
+23992:M 04 Aug 2020 00:48:10.867 * Module fork exited pid: 24130, retcode: 0, bysignal: 0
+23992:04 Aug 00:48:10.901 Snapshot created successfuly.
+23992:04 Aug 00:48:10.901 Snapshot operation completed successfuly.
+23992:04 Aug 00:48:10.977 Log rewrite complete, 1 entries rewritten (from idx 214).
+23992:04 Aug 00:48:24.772 State change: Election starting, node is now a candidate, term 3
+23992:04 Aug 00:48:24.772 Cluster Membership: term:3 index:283 nodes: id=267294088,voting=1,active=1,addr=- id=1004944532,voting=1,active=1,addr=172.19.0.4:6379 id=1765497231,voting=1,active=1,addr=172.19.0.9:6379 id=1223588425,voting=1,active=1,addr=172.19.0.3:6379 id=1374221001,voting=1,active=1,addr=172.19.0.7:6379
+23992:04 Aug 00:48:24.889 State change: Node is now a leader, term 4
+23992:04 Aug 00:48:24.889 Cluster Membership: term:4 index:283 nodes: id=267294088,voting=1,active=1,addr=- id=1004944532,voting=1,active=1,addr=172.19.0.4:6379 id=1765497231,voting=1,active=1,addr=172.19.0.9:6379 id=1223588425,voting=1,active=1,addr=172.19.0.3:6379 id=1374221001,voting=1,active=1,addr=172.19.0.7:6379
+23992:04 Aug 00:48:25.873 {node:1374221001} RAFT.REQUESTVOTE failed: connection dropped.

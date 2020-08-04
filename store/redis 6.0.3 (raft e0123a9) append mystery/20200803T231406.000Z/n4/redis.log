@@ -1,0 +1,37 @@
+2020-08-03 23:14:10 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+2496:C 03 Aug 2020 23:14:10.744 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2496:C 03 Aug 2020 23:14:10.744 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=2496, just started
+2496:C 03 Aug 2020 23:14:10.744 # Configuration loaded
+2496:M 03 Aug 2020 23:14:10.745 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+2496:M 03 Aug 2020 23:14:10.746 * Running mode=standalone, port=6379.
+2496:M 03 Aug 2020 23:14:10.746 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+2496:M 03 Aug 2020 23:14:10.746 # Server initialized
+2496:M 03 Aug 2020 23:14:10.746 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+2496:M 03 Aug 2020 23:14:10.746 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+2496:M 03 Aug 2020 23:14:10.747 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+2496:M 03 Aug 2020 23:14:10.748 * Ready to accept connections
+2496:03 Aug 23:14:12.115 Joined Raft cluster, node id: 959945876, dbid: dec1bcac977b39bd9d3a25a7a844a129
+2496:03 Aug 23:14:12.340 State change: Node is now a follower, term 1
+2496:03 Aug 23:14:12.340 Cluster Membership: term:1 index:0 nodes: id=959945876,voting=0,active=1,addr=-
+2496:03 Aug 23:14:28.168 *** NODE REMOVED, SHUTTING DOWN.
+2020-08-03 23:14:57 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+2644:C 03 Aug 2020 23:14:57.132 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2644:C 03 Aug 2020 23:14:57.132 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=2644, just started
+2644:C 03 Aug 2020 23:14:57.132 # Configuration loaded
+2644:M 03 Aug 2020 23:14:57.133 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+2644:M 03 Aug 2020 23:14:57.134 * Running mode=standalone, port=6379.
+2644:M 03 Aug 2020 23:14:57.134 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+2644:M 03 Aug 2020 23:14:57.134 # Server initialized
+2644:M 03 Aug 2020 23:14:57.134 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+2644:M 03 Aug 2020 23:14:57.135 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+2644:M 03 Aug 2020 23:14:57.135 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+2644:M 03 Aug 2020 23:14:57.136 * Ready to accept connections
+2644:03 Aug 23:14:58.238 Join redirected to leader: 172.19.0.3:6379
+2644:03 Aug 23:14:58.394 Joined Raft cluster, node id: 162927279, dbid: dec1bcac977b39bd9d3a25a7a844a129
+2644:03 Aug 23:14:58.736 Saved received snapshot to file: redis.rdb, 1252 bytes
+2644:M 03 Aug 2020 23:14:58.736 * Loading RDB produced by version 6.0.3
+2644:M 03 Aug 2020 23:14:58.737 * RDB age 10 seconds
+2644:M 03 Aug 2020 23:14:58.737 * RDB memory usage when created 0.87 Mb
+2644:03 Aug 23:14:58.737 Begining snapshot load, term=1, last_included_index=208
+2644:03 Aug 23:14:58.820 Snapshot Load: adding node 1084410723: yes: voting=(null)
+2644:03 Aug 23:14:58.820 Snapshot Load: adding node 1259534285: no: voting=(null)

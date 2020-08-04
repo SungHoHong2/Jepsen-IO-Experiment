@@ -1,0 +1,57 @@
+2020-08-04 00:48:51 Jepsen starting redis-server --bind 0.0.0.0 --dbfilename redis.rdb --loadmodule /opt/redis/redisraft.so loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000 
+24798:C 04 Aug 2020 00:48:51.960 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+24798:C 04 Aug 2020 00:48:51.961 # Redis version=6.0.3, bits=64, commit=7803b114, modified=0, pid=24798, just started
+24798:C 04 Aug 2020 00:48:51.961 # Configuration loaded
+24798:M 04 Aug 2020 00:48:51.962 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+24798:M 04 Aug 2020 00:48:51.962 * Running mode=standalone, port=6379.
+24798:M 04 Aug 2020 00:48:51.962 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+24798:M 04 Aug 2020 00:48:51.963 # Server initialized
+24798:M 04 Aug 2020 00:48:51.963 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+24798:M 04 Aug 2020 00:48:51.963 * <redisraft> RedisRaft starting, arguments: loglevel=debug raft-log-filename=raftlog.db raft-log-max-file-size=32000 raft-log-max-cache-size=1000000
+24798:M 04 Aug 2020 00:48:51.963 * Module 'redisraft' loaded from /opt/redis/redisraft.so
+24798:M 04 Aug 2020 00:48:51.964 * Ready to accept connections
+24798:04 Aug 00:48:53.109 State change: Node is now a leader, term 0
+24798:04 Aug 00:48:53.109 Cluster Membership: term:0 index:0 nodes: id=1891351310,voting=1,active=1,addr=-
+24798:04 Aug 00:48:53.175 Raft Cluster initialized, node id: 1891351310, dbid: 1e59fbda447a02c2f93a2b642c5b9e27
+24798:04 Aug 00:49:29.789 Raft log file size is 32129, initiating snapshot.
+24798:04 Aug 00:49:29.789 Initiating snapshot.
+24798:04 Aug 00:49:29.789 Snapshot scope: first_entry_idx=205, current_idx=205
+24965:C 04 Aug 2020 00:49:29.839 * DB saved on disk
+24965:C 04 Aug 2020 00:49:29.840 * Module fork: 0 MB of memory used by copy-on-write
+24798:M 04 Aug 2020 00:49:29.864 * Module fork exited pid: 24965, retcode: 0, bysignal: 0
+24798:04 Aug 00:49:29.889 Snapshot created successfuly.
+24798:04 Aug 00:49:29.889 Snapshot operation completed successfuly.
+24798:04 Aug 00:49:29.948 Log rewrite complete, 0 entries rewritten (from idx 205).
+24798:04 Aug 00:49:29.949 {node:394165991} not sending snapshot, snapshot_in_progress
+24798:04 Aug 00:49:30.015 {node:394165991} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:30.015 {node:394165991} Sent snapshot: 1161 bytes, term 1, index 205
+24798:04 Aug 00:49:30.015 {node:394165991} Loaded snapshot: redis.rdb: 1161 bytes
+24798:04 Aug 00:49:30.315 {node:394165991} RAFT.LOADSNAPSHOT failure: connection dropped
+24798:04 Aug 00:49:30.415 {node:394165991} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:30.415 {node:394165991} Sent snapshot: 1161 bytes, term 1, index 205
+24798:04 Aug 00:49:30.415 {node:394165991} Loaded snapshot: redis.rdb: 1161 bytes
+24798:04 Aug 00:49:31.460 {node:394165991} RAFT.LOADSNAPSHOT failure: connection dropped
+24798:04 Aug 00:49:31.460 {node:394165991} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:31.460 {node:394165991} not connected, state=1
+24798:04 Aug 00:49:31.660 {node:394165991} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:31.660 {node:394165991} Sent snapshot: 1161 bytes, term 1, index 205
+24798:04 Aug 00:49:31.660 {node:394165991} Loaded snapshot: redis.rdb: 1161 bytes
+24798:04 Aug 00:49:32.664 {node:394165991} RAFT.LOADSNAPSHOT failure: connection dropped
+24798:04 Aug 00:49:32.764 {node:394165991} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:32.764 {node:394165991} Sent snapshot: 1161 bytes, term 1, index 205
+24798:04 Aug 00:49:32.764 {node:394165991} Loaded snapshot: redis.rdb: 1161 bytes
+24798:04 Aug 00:49:33.775 {node:394165991} RAFT.LOADSNAPSHOT response 0
+24798:04 Aug 00:49:35.327 {node:290605884} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:35.328 {node:290605884} Sent snapshot: 1161 bytes, term 1, index 205
+24798:04 Aug 00:49:35.328 {node:290605884} Loaded snapshot: redis.rdb: 1161 bytes
+24798:04 Aug 00:49:35.462 {node:290605884} RAFT.LOADSNAPSHOT response 1
+24798:04 Aug 00:49:39.568 {node:1093069039} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:39.568 {node:1093069039} not connected, state=1
+24798:04 Aug 00:49:39.809 {node:1093069039} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:39.809 {node:1093069039} Sent snapshot: 1161 bytes, term 1, index 205
+24798:04 Aug 00:49:39.809 {node:1093069039} Loaded snapshot: redis.rdb: 1161 bytes
+24798:04 Aug 00:49:39.943 {node:1093069039} RAFT.LOADSNAPSHOT response 1
+24798:04 Aug 00:49:44.401 {node:424419162} raftSendSnapshot: snapshot_last_idx 205 term 1, node next_idx 1
+24798:04 Aug 00:49:44.401 {node:424419162} Sent snapshot: 1161 bytes, term 1, index 205
+24798:04 Aug 00:49:44.401 {node:424419162} Loaded snapshot: redis.rdb: 1161 bytes
+24798:04 Aug 00:49:44.653 {node:424419162} RAFT.LOADSNAPSHOT response 1

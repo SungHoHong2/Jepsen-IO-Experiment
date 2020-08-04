@@ -1,0 +1,43 @@
+2020-08-03 23:15:11,088{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+ {:remote {:session nil},
+ :concurrency 5,
+ :db
+ #object[jepsen.redis.db$redis_raft$reify__6558 0x1f939a0f "jepsen.redis.db$redis_raft$reify__6558@1f939a0f"],
+ :leave-db-running? false,
+ :name "redis 6.0.3 (raft e0123a9) append ",
+ :logging-json? false,
+ :start-time
+ #object[org.joda.time.DateTime 0x46dcbeab "2020-08-03T23:15:10.000Z"],
+ :nemesis-interval 3,
+ :net
+ #object[jepsen.net$reify__5520 0x80b122b "jepsen.net$reify__5520@80b122b"],
+ :raft-log-max-cache-size 1000000,
+ :client {:conn nil},
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier 0x3f96f020 "java.util.concurrent.CyclicBarrier@3f96f020"],
+ :ssh
+ {:username "root",
+  :password "root",
+  :strict-host-key-checking false,
+  :private-key-path nil},
+ :rate 10,
+ :tcpdump false,
+ :checker
+ #object[jepsen.checker$compose$reify__5060 0x32d5279 "jepsen.checker$compose$reify__5060@32d5279"],
+ :nemesis
+ #object[jepsen.nemesis$compose$reify__5683 0x1665fa54 "jepsen.nemesis$compose$reify__5683@1665fa54"],
+ :active-histories #<Atom@294f9d50: #{}>,
+ :nodes ["n1" "n2" "n3" "n4" "n5"],
+ :test-count 1,
+ :raft-version "e0123a9",
+ :follower-proxy false,
+ :generator
+ (gen/timelimit 60 (gen/concat [(gen/on #{:nemesis} (gen/gvoid)) (gen/on #object[clojure.core$complement$fn__5654 0x2abbd0d9 "clojure.core$complement$fn__5654@2abbd0d9"] (gen/delayfn #object[clojure.core$partial$fn__5824 0x32bb0072 "clojure.core$partial$fn__5824@32bb0072"] (gen/seqone ({:type :invoke, :f :txn, :value [[:r 11 nil]]} {:type :invoke, :f :txn, :value [[:append 11 1] [:r 9 nil]]} {:type :invoke, :f :txn, :value [[:r 9 nil] [:append 11 2]]} {:type :invoke, :f :txn, :value [[:append 11 3] [:r 11 nil] [:r 9 nil] [:append 10 1]]} {:type :invoke, :f :txn, :value [[:r 10 nil] [:append 10 2] [:r 10 nil] [:append 11 4]]} {:type :invoke, :f :txn, :value [[:r 10 nil] [:append 11 5] [:append 8 1]]} {:type :invoke, :f :txn, :value [[:r 11 nil] [:r 9 nil] [:append 11 6] [:r 10 nil]]} {:type :invoke, :f :txn, :value [[:r 11 nil] [:append 11 7] [:append 11 8]]}))))])),
+ :os
+ #object[jepsen.os.debian.Debian 0x6025d790 "jepsen.os.debian.Debian@6025d790"],
+ :time-limit 60,
+ :version "6.0.3",
+ :nuke-after-leave true,
+ :workload :append,
+ :raft-log-max-file-size 32000}
+
