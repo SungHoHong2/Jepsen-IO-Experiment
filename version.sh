@@ -76,6 +76,10 @@ then
         cp /jepsen/jepsen.etcdemo/store/latest/history.txt debug/history-$TIMESTAMP.txt
     fi
 
+
+
+
+
 elif [ "$1" = "elle" ]
 then
 
@@ -123,6 +127,15 @@ then
     cd /jepsen/redis
     lein install
     lein run $3 # test-all
+
+
+elif [ "$1" = "elle_mongodb" ]
+then
+    cp elle/mongodb/mongodb.clj /jepsen/mongodb/src/jepsen/
+    cp elle/mongodb/db.clj /jepsen/mongodb/src/jepsen/mongodb/
+    cd /jepsen/mongodb
+    lein install
+    lein run test-all
 
 elif [ "$1" = "demo" ]
 then
