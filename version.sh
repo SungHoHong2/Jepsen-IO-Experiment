@@ -135,7 +135,7 @@ then
     cp elle/mongodb/db.clj /jepsen/mongodb/src/jepsen/mongodb/
     cd /jepsen/mongodb
     lein install
-    lein run test-all
+    lein run test-all -w list-append --nodes-file hostnames
 
 elif [ "$1" = "demo" ]
 then
