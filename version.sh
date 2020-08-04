@@ -136,7 +136,7 @@ then
     cp elle/mongodb/hostnames /jepsen/mongodb/
     cd /jepsen/mongodb
     lein install
-    lein run test-all -w list-append --nodes-file hostnames
+    lein run test-all -w list-append --nodes-file hostnames -r 1000 --concurrency 3n --time-limit 120 --read-concern majority --nemesis-interval 1 --nemesis partition
 
 elif [ "$1" = "demo" ]
 then
