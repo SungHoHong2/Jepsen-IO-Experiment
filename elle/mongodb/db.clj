@@ -41,6 +41,7 @@
   (c/su
     (c/exec :mkdir :-p "/tmp/jepsen")
     (c/cd "/tmp/jepsen"
+          ls -l
           (doseq [subpackage subpackages]
             (when-not (= (:version test)
                          (debian/installed-version (str "mongodb-org-"
