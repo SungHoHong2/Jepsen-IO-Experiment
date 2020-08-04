@@ -48,7 +48,7 @@
               (let [file (cu/wget! (deb-url test subpackage))]
                 (info "Installing" subpackage (:version test))
                 (c/exec :dpkg :-i :--force-confnew file))
-              (c/exec :service :daemon-reload))))))
+              (c/exec :systemctl :daemon-reload))))))
 
 (defn config-server?
   "Takes a test map, and returns true iff this set of nodes is intended to be a
@@ -72,13 +72,13 @@
 (defn start!
   "Starts mongod"
   [test node]
-  (c/su (c/exec :service :start :mongod)))
+  (c/su (c/exec :systemctl :start :mongod)))
 
 (defn stop!
   "Stops the mongodb service"
   [test node]
   (try+
-    (c/su (c/exec :service :stop :mongod))
+    (c/su (c/exec :systemctl :stop :mongod))
     (catch [:exit 5] e
       ; Not loaded; we probably haven't installed
       )))
