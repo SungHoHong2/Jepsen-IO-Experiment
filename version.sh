@@ -133,6 +133,7 @@ elif [ "$1" = "elle_mongodb" ]
 then
     cp elle/mongodb/mongodb.clj /jepsen/mongodb/src/jepsen/
     cp elle/mongodb/db.clj /jepsen/mongodb/src/jepsen/mongodb/
+    cp elle/mongodb/hostnames /jepsen/mongodb/
     cd /jepsen/mongodb
     lein install
     lein run test-all -w list-append --nodes-file hostnames
