@@ -14,7 +14,7 @@
                       :info-count 372}}},
  :exceptions {:valid? true},
  :workload {:valid? false,
-            :anomaly-types (:G1a :dirty-update :incompatible-order),
+            :anomaly-types (:G1a :incompatible-order),
             :anomalies {:incompatible-order ({:key 297,
                                               :values [[150] [1]]}
                                              {:key 295,
@@ -29,26 +29,6 @@
                                                         180
                                                         181
                                                         190]]}),
-                        :dirty-update ({:key 295,
-                                        :values [223 228],
-                                        :txns [{:type :fail,
-                                                :f :txn,
-                                                :value [[:append
-                                                         295
-                                                         223]],
-                                                :process 562,
-                                                :time 597134938964,
-                                                :error :noleader,
-                                                :index 123270}
-                                               ...
-                                               {:type :ok,
-                                                :f :txn,
-                                                :value [[:append
-                                                         295
-                                                         228]],
-                                                :process 617,
-                                                :time 597205473692,
-                                                :index 123301}]}),
                         :G1a ({:op {:type :ok,
                                     :f :txn,
                                     :value [[:r 297 [150]]
