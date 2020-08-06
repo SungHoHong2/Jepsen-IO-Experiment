@@ -77,9 +77,6 @@ then
     fi
 
 
-
-
-
 elif [ "$1" = "elle" ]
 then
 
@@ -126,7 +123,7 @@ then
     # uses redis repository
     cd /jepsen/redis
     lein install
-    lein run $3 # test-all
+    lein run $3 $4 $5 # test-all
 
 
 elif [ "$1" = "elle_mongodb" ]
@@ -143,6 +140,6 @@ then
     cd /jepsen/redis
     lein run $2 # test-all
 else
-  echo "no argument straight to d"
+  echo "no argument"
 
 fi
