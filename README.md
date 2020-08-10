@@ -13,11 +13,11 @@
         - [Checker](checker)
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
 - **[Elle Experiments](elle)**
-    - [basic output](elle/store)
-    - [G1a output](debug/G1a-AbortedRead.edn)
-    - [Lostupdate output](debug/LostUpdate.edn)
-    - [G2 output(1)](debug/G2-master.edn) 
-    - [G2 output(2)](debug/G2-pause.edn)
+    - [Redis basic output](elle/store)
+    - [Redis G1a output](debug/G1a-AbortedRead.edn)
+    - [Redis Lostupdate output](debug/LostUpdate.edn)
+    - [YugaByte G2 output(1)](debug/G2-master.edn) 
+    - [YugaByte G2 output(2)](debug/G2-pause.edn)
     - [Reference link](https://github.com/jepsen-io/elle)
 
 ### Prerequisite
