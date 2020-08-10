@@ -13,6 +13,7 @@
         - [Checker](checker)
     - [Reference link](https://github.com/jepsen-io/jepsen/blob/master/doc/tutorial/index.md)
 - **[Elle Experiments](elle)**
+    - Generating outputs using `Jepsen` and checking anomalies with `Elle`
     - [Redis basic output](elle/store)
     - [Redis G1a output](debug/G1a-AbortedRead.edn)
     - [Redis Lostupdate output](debug/LostUpdate.edn)
